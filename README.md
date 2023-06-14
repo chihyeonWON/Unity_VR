@@ -16,3 +16,9 @@ Unity_Project on 2023 Summer Vacation.
 Windows 운영체제에 맞는 Unity를 다운
 Personal(무료) 버전 2019.1.10f1, Unity Hub 2.0.4
 ```
+## 씬에 물체 배치하기
+
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/90c85383-7bb4-4a70-bfc5-c79773422621)
+```
+GameObject -> 3D Object -> Plane(평면), Cube(정육면체) 작성
+```
