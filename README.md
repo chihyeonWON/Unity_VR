@@ -92,3 +92,48 @@ Game 뷰에서 총의 끝이 조금 보이는 듯한 시야로 설정하기 위�
 
 여기서는 Main Camera를 회전하는 C# 스크립트를 작성한 후 생성된 컴포넌트(CameraRotator.cs)를 Main Camera에 추가하였습니다.
 ```
+## [C#] CameraRotator 스크립트 분석
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/482b3bbf-b35d-4d11-a517-2458f99867f8)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/dc14059c-55bd-42dd-8df8-53cbf0e25cd4)
+```
+CameraRotator 클래스는 유니티가 제공하는 클래스인 MonoBehaviour 클래스를 상속받고 있으며 
+MonoBehaviour 클래스의 멤버 변수인 이벤트 함수들을 구현하여 컴포넌트의 기능을 구현할 수 있게 되었습니다.
+
+public 또는 [SerializeField] 속성이 붙은 멤버 변수(angularVelocity)는 유니티의 인스펙터 창에서 설정을 변경할 수 있습니다.
+여기에서 정의한 angularVelocity가 인스펙터 창에서 [Angular Velocity]라는 이름의 프로퍼티로 표시되고 그 초깃값은 30f라는 
+것을 알 수 있습니다. horizontalAngle과 verticalAngle은 회전량을 저장하기 위한 변수로 사용합니다.
+```
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/8fb9b7d2-13f3-4e7e-8d24-6301c1618fff)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/1a14da0b-e07d-436f-9fe1-7b285fceea23)
+```
+# if UNITY_EDITOR #endif 블록은 C#의 프리프로세스라는 것을 이용한 기술로, 이렇게 적어두면 둘러싸인 범위가 유니티 에디터에서만 유효
+즉 휴대 단말에서 확인 시에는 무효되게 됩니다. 이는 휴대 단말에서 확인할 때 카메라의 제어를 VR 기능이 맡게 되기 때문에 
+처리가 충돌되지 않게 한다는 의미가 있습니다.
+```
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/9f311228-a92d-4ac3-9cbd-b3be55e05371)
+```
+Update 함수의 내부 로직의 첫 부분에서 키보드 입력을 통해 회전 속도와 프레임의 시간으로부터 회전량을 계산합니다.
+
+horizontal (수평), vertical (수직) 두 축이 있으며 Input.GetAxis("horizontal or vertical")을 사용하여
+화살표의 키 입력에 응해 -1부터 1의 값을 얻을 수 있습니다.
+
+수평 : 왼쪽이 -1 오른쪽이 1 , 수직 : 아래쪽이 -1 위쪽이 1
+
+Time.deltaTime은 앞 프레임으로부터의 경과 시간을 반환합니다. 이것을 회전 속도와 곱해서 회전량을 얻을 수 있습니다.
+
+수직방향의 회전값 veritcal을 마이너스로 하는 것은 입력과 회전 방향을 맞추기 위함입니다.
+(x축으로의 회전은 아래로 향하는 것이 정방향이기 때문에 입력을 반전시키기 위해 마이너스 값으로 변환)
+```
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/c55c88fa-83e3-434c-a4cf-7e157c82438f)
+```
+입력에 따른 각 방향의 회전량을 얻은 다음 지금까지의 회전값에 그 값을 더합니다.
+
+수직 방향으로 90도를 넘으면 좋지 않기 때문에 80도 이상이 되지 않도록 처리합니다.
+Matf.Clamp는 값을 범위 내로 넣는 처리입니다.
+
+마지막으로 회전량을 게임 오브젝트에 반영하고 있습니다.
+
+MonoBehaviour의 transform 프로퍼티에서 'Transform' 컴포넌트를 취득하고 rotation에 회전 각도에 해당하는 쿼터니언을 설정합니다.
+여기서는 Quaternion.Euler에 의한 오일러 각을 사용합니다. 
+Transform 컴포넌트를 이용하여 스크립트로부터 게임 오브젝트의 위치나 회전을 갱신해서 움직일 수 있습니다.
+```
