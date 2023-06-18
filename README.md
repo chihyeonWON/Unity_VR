@@ -137,3 +137,19 @@ MonoBehaviour의 transform 프로퍼티에서 'Transform' 컴포넌트를 취득
 여기서는 Quaternion.Euler에 의한 오일러 각을 사용합니다. 
 Transform 컴포넌트를 이용하여 스크립트로부터 게임 오브젝트의 위치나 회전을 갱신해서 움직일 수 있습니다.
 ```
+## 총알 생성하기
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/bbc1b682-a5fa-479a-9c9d-825720e05c02)
+```
+3d object의 Sphere로 구를 생성한 후 이름을 Bullet으로 변경합니다.
+
+오브젝트의 크기(scale)을 0.05, 0.05, 0.05로 수정합니다.
+```
+## 총알 Object를 프리팹화하기 (Prefab)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/9c471bac-4eaa-4e29-a249-2b824b61ae1d)
+```
+프리팹은 게임 오프젝트의 템플릿에 해당하는 에셋입니다. 게임 중에 몇 번 나올 것 같은 게임 오브젝트를 
+프리팹화해 두면 프리팹을 바탕으로 간단하게 게임 오브젝트를 씬상에 여러 개 계속 생성할 수 있습니다.
+
+하이어라키 창의 Bullet을 프로젝트 창의 'Assets/VRShooting/Prefabs' 경로에 드래그 앤 드롭하여 
+프리팹화 합니다.
+```
