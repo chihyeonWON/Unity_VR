@@ -203,7 +203,7 @@ AddForce 함수의 두 번째 인수로 힘을 주는 방법을 지정하는 데
 지정하여 지정한 속도 변화에 상당하는 힘을 가할 수 있습니다.
 ```
 ## 불필요한 게임 오브젝트를 제거하는 AutoDestroy 컴포넌트 작성
-![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/037ab1b8-f29d-4399-98ed-2c2f9d779184)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/327151a8-40f3-4399-8527-bd2b866ed059)
 ```
 총에서 마우스 입력에 따라 총알을 발사하는 시스템까지는 생겼지만 이대로는 계속해서
 Bullet(Clone) 게임 오브젝트가 발사할 때마다 계속 늘어납니다.
