@@ -54,3 +54,11 @@ VR Shooting 파일 밑으로 음성 관련한 에셋 Audio와 게임 오브젝�
 
 씬에 배치하고 Position을 수정(0, 25, 0)하였습니다.
 ```
+## 카메라의 이동
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/3e2bc9e9-989d-485e-b5f3-ade1e9b1c7b4)
+```
+FPS 게임에서는 플레이어 캐릭터에서 본 시야가 화면에 비춰집니다. 따라서 카메라의 위치를 변경해
+플레이어가 가지고 있는 무기가 보이도록 설정합니다.
+
+Main Camera의 위치를 수정(0, 1.6, 0)합니다.
+```
