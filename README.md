@@ -73,3 +73,10 @@ PlayerGun asset의 position이 부모(Main Camera)의 position(0, 1.6, 0)을 상
 ```
 PlayerGun의 자식 요소인 Player를 선택하고 inspector 창에서 비활성화(오브젝트 명 옆 체크 해제)하면 총만 표시됩니다. 
 ```
+## PlayGun의 이동
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/0fa80cb1-1b46-460f-9928-be6e4602a2c5)
+```
+Game 뷰에서 총의 끝이 조금 보이는 듯한 시야로 설정하기 위해 PlayGun 오브젝트의 위치를 수정(-0.25, -0.7, 0.6)합니다.
+
+게임 뷰에서 오브젝트의 위치를 봐가면서 수정함 
+```
