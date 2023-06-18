@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
         var velocity = speed * transform.forward;
 
         // Rigidbody 컴포넌트를 취득
-        var rigidbody = GetComponent<rigidbody>();
+        var rigidbody = GetComponent<Rigidbody>();
 
         // Rigidbody 컴포넌트를 사용해 시작 속도를 준다
         rigidbody.AddForce(velocity, ForceMode.VelocityChange);
