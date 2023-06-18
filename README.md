@@ -173,3 +173,11 @@ Update 함수에서는 입력에 따라 Shoot 함수를 호출합니다. Input.G
 PlayerGun 오브젝트에 작성한 Shooter 컴포넌트를 추가하고 Bullet Prefab 프로퍼티에 Bullet asset을 넣고
 Gun Barrel End 프로퍼티에 PlayerGun의 자식 요소인 GunBarrelEnd(총구) 오브젝트를 추가합니다.
 ```
+## Shooter 스크립트의 동작 확인
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/37ef319b-e091-4b98-ab4a-e6e699152010)
+```
+씬을 실행 시키고 마우스 클릭을 하면 총알이 생성되는 것을 확인할 수 있습니다.
+하이어라키 창에는 클릭할 때마다 Bullet(Clone)의 이름의 게임 오브젝트가 증가합니다.
+
+하지만 총알은 멈춰 있기만 할 뿐 날아가지 않습니다.
+```
