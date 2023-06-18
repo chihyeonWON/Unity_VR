@@ -189,3 +189,16 @@ Gun Barrel End 프로퍼티에 PlayerGun의 자식 요소인 GunBarrelEnd(총구
 또 Rigidbody 컴포넌트의 Use Gravity 프로퍼티의 체크를 해제하여 
 총알이 중력의 영향을 받지 않게 설정하였습니다.
 ```
+## 총알의 동작을 담당할 Bullet C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/4b8e31c0-9e1f-43d9-9d6a-237918309590)
+```
+RequireComponent(typeof(Rigidbody))] 설정으로 Rigidbody 컴포넌트가 필요하게 되고
+
+Start함수 안에서 먼저 총알에 주는 속도를 계산합니다.
+transform.forward는 총알의 앞쪽 방향(z방향)을 나타내는 단위 벡터로 
+speed * transform.forward에 의해 앞쪽 방향으로 지정한 속도의 크기와 방향을 가진 벡터를 얻습니다.
+
+또한 Rigidbody 컴포넌트의 AddForce 함수에 의해 계산한 속도에 상당하는 힘을 줍니다.
+AddForce 함수의 두 번째 인수로 힘을 주는 방법을 지정하는 데 이때 ForceMode.VelocityChange를 
+지정하여 지정한 속도 변화에 상당하는 힘을 가할 수 있습니다.
+```
