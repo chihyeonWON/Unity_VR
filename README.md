@@ -153,3 +153,17 @@ Transform 컴포넌트를 이용하여 스크립트로부터 게임 오브젝트
 하이어라키 창의 Bullet을 프로젝트 창의 'Assets/VRShooting/Prefabs' 경로에 드래그 앤 드롭하여 
 프리팹화 합니다.
 ```
+## 총알을 발사하는 Shooter C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/63926e6a-8864-4801-aead-93ac954f1f36)
+```
+총알의 프리팹(GameObject형)와 총구의 Transform을 변수로 정의합니다.
+게임 오브젝트와 컴포넌트의 형도 [SerializeField]로 지정하여 인스펙터 창에서 설정하게 할 수 있습니다.
+
+Update 함수에서는 입력에 따라 Shoot 함수를 호출합니다. Input.GetButtonDown은 지정된 버튼이
+눌린 순간에 true를 돌려주는 함수입니다. 또한 "Fire1"이라는 버튼명은 기본값으로 정의된 것으로,
+마우스 왼쪽 버튼이나 왼쪽 I키의 입력을 받을 수 있습니다.
+
+총알을 발사하는 Shoot함수안의 Instantiate 함수는 게임 오브젝트를 복사하는 함수로 첫 번째 인자로는 
+복제할 프리팹을 두 번째 인자로는 총구의 위치(gunBarrelEnd.position)와 총구의 방향(gunBarrelEnd.rotation)을 지정해
+총알을 생성하게끔 지정하였습니다.
+```
