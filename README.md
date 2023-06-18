@@ -181,3 +181,11 @@ Gun Barrel End 프로퍼티에 PlayerGun의 자식 요소인 GunBarrelEnd(총구
 
 하지만 총알은 멈춰 있기만 할 뿐 날아가지 않습니다.
 ```
+## 총알에 물리 엔진 적용하기
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/13a69880-2825-4293-adb6-9157a9a4297f)
+```
+프로젝트 창의 Bullet asset에 Rigidbody 컴포넌트를 추가하였습니다.
+
+또 Rigidbody 컴포넌트의 Use Gravity 프로퍼티의 체크를 해제하여 
+총알이 중력의 영향을 받지 않게 설정하였습니다.
+```
