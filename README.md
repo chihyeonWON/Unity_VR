@@ -190,7 +190,7 @@ Gun Barrel End 프로퍼티에 PlayerGun의 자식 요소인 GunBarrelEnd(총구
 총알이 중력의 영향을 받지 않게 설정하였습니다.
 ```
 ## 총알의 동작을 담당할 Bullet C# Script 작성
-![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/4b8e31c0-9e1f-43d9-9d6a-237918309590)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/0d734caa-2abf-4c97-8899-79a04032c914)
 ```
 RequireComponent(typeof(Rigidbody))] 설정으로 Rigidbody 컴포넌트가 필요하게 되고
 
