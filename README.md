@@ -62,9 +62,14 @@ FPS 게임에서는 플레이어 캐릭터에서 본 시야가 화면에 비춰�
 
 Main Camera의 위치를 수정(0, 1.6, 0)합니다.
 ```
-## Player 오브젝트 배치
+## PlayerGun 오브젝트 배치
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/cfb1c68b-6a38-43cb-a866-e79262b3e20a)
 ```
-Player asset을 Main Camera의 자식 요소로 추가합니다.
-Player asset의 position이 부모(Main Camera)의 position(0, 1.6, 0)을 상속받습니다. 
+PlayerGun asset을 Main Camera의 자식 요소로 추가합니다.
+PlayerGun asset의 position이 부모(Main Camera)의 position(0, 1.6, 0)을 상속받습니다. 
+```
+## 오브젝트 비활성화
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/9d1b48d5-7c2f-4d1d-bae7-b1c43e4006a5)
+```
+PlayerGun의 자식 요소인 Player를 선택하고 inspector 창에서 비활성화(오브젝트 명 옆 체크 해제)하면 총만 표시됩니다. 
 ```
