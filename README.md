@@ -202,3 +202,17 @@ speed * transform.forward에 의해 앞쪽 방향으로 지정한 속도의 크�
 AddForce 함수의 두 번째 인수로 힘을 주는 방법을 지정하는 데 이때 ForceMode.VelocityChange를 
 지정하여 지정한 속도 변화에 상당하는 힘을 가할 수 있습니다.
 ```
+## 불필요한 게임 오브젝트를 제거하는 AutoDestroy 컴포넌트 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/037ab1b8-f29d-4399-98ed-2c2f9d779184)
+```
+총에서 마우스 입력에 따라 총알을 발사하는 시스템까지는 생겼지만 이대로는 계속해서
+Bullet(Clone) 게임 오브젝트가 발사할 때마다 계속 늘어납니다.
+이렇게 되면 그만큼 처리의 부하가 늘어나기 때문에 불필요한 게임 오브젝트는 제거해야 합니다.
+
+게임 오브젝트의 수명 lifetime 변수를 5f로 설정하고
+Destroy 함수를 사용하여 gameObject를 lifetime = 5f 가 경과한 이후에 제거하도록 하였습니다.
+
+그 후 이 AutoDestroy 컴포넌트를 Bullet prefabs에 추가합니다.
+
+발사한 총알이 하이어라키 창에서 일정 시간이 지나면 사라지는 것을 확인할 수 있습니다.
+```
