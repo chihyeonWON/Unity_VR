@@ -35,3 +35,22 @@ Collider 컴포넌트, Mesh Filter 컴포넌트, Renderer/Mesh Renderer 컴포�
 Light 컴포넌트, Audio Listener 컴포넌트, Audio Source 컴포넌트, Script 컴포넌트 등
 다양한 컴포넌트가 있습니다.
 ```
+## 프로젝트에 필요한 에셋 추가하기
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/c279690c-2e94-4914-bcfc-2fa7c4093058)
+```
+에셋스토어에서 다양한 에셋들을 선택 및 다운로드 하고 프로젝트에 import 하는 방법을 알아보았습니다.
+
+VR Shooting 파일 밑으로 음성 관련한 에셋 Audio와 게임 오브젝트의 템플릿에 해당하는 Prefabs 파일
+오브젝트의 표면 색상이나 요철 등의 외관의 표현을 목적으로 한 Textures 파일
+오브젝트를 그릴 때의 렌더링 방법을 표현하는 Material 파일
+캐릭터나 배경의 모델 데이터 Models 파일
+
+크게 총 5종류의 에셋 파일을 프로젝트에 추가하였습니다.
+```
+## 지면 에셋을 프로젝트에 배치하기
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/562a8ea1-a9f2-4925-a681-af815639832c)
+```
+에셋 스토어에서 임포트한 에셋은 씬 뷰 또는 하이어라키 창에 드래그 앤 드롭하여 씬에 배치할 수 있습니다.
+
+씬에 배치하고 Position을 수정(0, 25, 0)하였습니다.
+```
