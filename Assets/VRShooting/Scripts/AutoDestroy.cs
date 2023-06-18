@@ -10,6 +10,6 @@ public class AutoDestroy : MonoBehaviour
     void Start()
     {
         // 일정 시간 경과 후에 게임 오브젝트를 제거한다.
-        AutoDestroy(gameObject, lifetime);
+        Destroy(gameObject, lifetime);
     }
 }
