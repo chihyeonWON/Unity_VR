@@ -167,3 +167,9 @@ Update 함수에서는 입력에 따라 Shoot 함수를 호출합니다. Input.G
 복제할 프리팹을 두 번째 인자로는 총구의 위치(gunBarrelEnd.position)와 총구의 방향(gunBarrelEnd.rotation)을 지정해
 총알을 생성하게끔 지정하였습니다.
 ```
+## Shooter 컴포넌트 적용
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/794ece71-020f-42e1-ae07-8ec5c4706506)
+```
+PlayerGun 오브젝트에 작성한 Shooter 컴포넌트를 추가하고 Bullet Prefab 프로퍼티에 Bullet asset을 넣고
+Gun Barrel End 프로퍼티에 PlayerGun의 자식 요소인 GunBarrelEnd(총구) 오브젝트를 추가합니다.
+```
