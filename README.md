@@ -222,3 +222,16 @@ Destroy 함수를 사용하여 gameObject를 lifetime = 5f 가 경과한 이후�
 ZomBear 게임 오브젝트를 하이어라키에 추가한 후 다시 Prefabs에 드래그 앤 드롭해서 프리팹화 합니다.
 이렇게 생성한 프리팹을 드래그 앤 드롭으로 씬 상에 2개를 추가하여 3개를 생성합니다.
 ```
+## ZomBear Prefab에 Rigidbody, Capsule Collider 컴포넌트 적용
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/6f0a98dd-1e70-4cc3-be14-43ca4655a568)
+```
+ZomBear prefab 하나에 rigidbody, capsule collider 컴포넌트를 적용합니다.
+각각 is kinematic , is Trigger 프로퍼티에 체크합니다.
+
+capsule collider의 edit collider 버튼을 클릭하여 콜라이더를 편집 상태로 만든 후
+콜라이더를 ZomBear와 비슷한 위치와 크기로 변경합니다.
+
+그 후 인스펙터 창 윗부분의 Overrides 버튼을 클릭한 후 Apply All을 클릭합니다.
+
+한 오브젝트에 적용한 컴포넌트들의 설정이 다른 프리팹에도 똑같이 적용됩니다.
+```
