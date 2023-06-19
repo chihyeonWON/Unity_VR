@@ -260,3 +260,16 @@ OnHitBullet이라는 메시지를 보내고 자신의 게임 오브젝트를 제
 SendMessage 함수에 의해 OnHitBullet 메시지를 받은 게임 오브젝트는 적용된 컴포넌트 전체에 대해서
 OnHitBullet 이라는 이름의 함수가 있으면 그 함수를 실행합니다.
 ```
+## ZomBear 프리팹에 적용할 Enemy C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/5cfea17e-c4e9-4c5f-8428-84928172dd5c)
+```
+총알과 충돌 시 적의 처리를 구현할 Enemy C# Script를 작성하였습니다.
+
+총알과 적이 충돌하면 Bullet 클래스의 OnTriggerEnter가 호출되며 그 중에 충돌 상대방 즉 적의 게임 오브젝트에
+OnHitMessage를 보내게 됩니다.
+
+적에게 적용된 'Enemy' 컴포넌트는 OnHitMessage 함수를 갖고 있기 때문에 이것이 호출되고
+그 결과로 적이 소멸(Destroy(gameObject))하게 됩니다.
+
+작성한 컴포넌트(Enemy)를 ZomBear 프리팹에 적용하고 실행하여 ZomBear를 총알로 맞췄을 때 총알과 적이 사라지게 됩니다.
+```
