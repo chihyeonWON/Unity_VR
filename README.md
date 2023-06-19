@@ -216,3 +216,9 @@ Destroy 함수를 사용하여 gameObject를 lifetime = 5f 가 경과한 이후�
 
 발사한 총알이 하이어라키 창에서 일정 시간이 지나면 사라지는 것을 확인할 수 있습니다.
 ```
+## 씬에 적을 배치
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/7b3ae0a5-b699-40e5-b3a7-9bd75deec911)`
+```
+ZomBear 게임 오브젝트를 하이어라키에 추가한 후 다시 Prefabs에 드래그 앤 드롭해서 프리팹화 합니다.
+이렇게 생성한 프리팹을 드래그 앤 드롭으로 씬 상에 2개를 추가하여 3개를 생성합니다.
+```
