@@ -249,3 +249,14 @@ ZomBear 프리팹에서 9번 레이어(Enemy)를 적용합니다.(자식 요소 
 
 또한 Edit - ProjectSettings의 Physics 창에서 Bullet 과 Enemy의 Layer Collision Matrix를 설정합니다.
 ```
+## Bullet C# Script에 충돌 시의 이벤트 구현
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/acd4635a-7153-4653-95fa-b5796fb95062)
+```
+Bullect C# Script 파일에 충돌 시의 이벤트를 구현하였습니다.
+
+onTriggerEnter 함수에서는 충돌한 상대의 Collider가 인수로서 전달되고 충돌 상대방에게 
+OnHitBullet이라는 메시지를 보내고 자신의 게임 오브젝트를 제거(Destroy)합니다.
+
+SendMessage 함수에 의해 OnHitBullet 메시지를 받은 게임 오브젝트는 적용된 컴포넌트 전체에 대해서
+OnHitBullet 이라는 이름의 함수가 있으면 그 함수를 실행합니다.
+```
