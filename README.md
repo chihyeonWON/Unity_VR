@@ -235,3 +235,17 @@ capsule collider의 edit collider 버튼을 클릭하여 콜라이더를 편집 
 
 한 오브젝트에 적용한 컴포넌트들의 설정이 다른 프리팹에도 똑같이 적용됩니다.
 ```
+## Bullet, Enemy Layer 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/1e7afab1-369b-4044-9ad8-daba1f379eea)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/5895ca6e-91f4-4f72-a497-a267200befe4)
+```
+총알(Bullet)과 적(ZomBear)이 충돌하는 듯한 레이어 설정을 합니다.
+레이어를 제대로 설정해 둠으로써 의도하지 않은 오브젝트 간의 충돌을 방지할 수 있습니다.
+
+8번 레이어 Bullet 과 9번 레이어 Enemy 를 Edit Layer 창에서 추가한 뒤
+
+Bullet 프리팹에서 8번 레이어(Bullet)를 적용합니다.
+ZomBear 프리팹에서 9번 레이어(Enemy)를 적용합니다.(자식 요소 모두의 레이어를 변경합니다)
+
+또한 Edit - ProjectSettings의 Physics 창에서 Bullet 과 Enemy의 Layer Collision Matrix를 설정합니다.
+```
