@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
     }
 
     // 트리거 영역 진입 시에 호출된다.
-    void onTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         // 충돌 대상에 "OnHitBullet" 메시지
         other.SendMessage("OnHitBullet");
