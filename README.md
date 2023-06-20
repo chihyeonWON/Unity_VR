@@ -308,3 +308,9 @@ update함수에서 타이머의 경과 시간을 갱신하고, 출현 시간 이
 ```
 Create Empty로 빈 오브젝트를 작성하고 Spawners라는 이름을 붙인 뒤 SpawnController 컴포넌트를 적용합니다.
 ```
+
+## EnemySpawner의 배치
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/52240a5b-3e98-4dfa-ac5a-271977754368)
+```
+Spawners 오브젝트의 자식 요소로 EnemySpawner 프리팹을 5개를 배치합니다.
+```
