@@ -302,3 +302,9 @@ start함수에서 GetComponentsInChildren이라는 함수로 Spawner의 리스�
 update함수에서 타이머의 경과 시간을 갱신하고, 출현 시간 이상 경과하는 경우에는 랜덤으로 선택한 Spawner로부터
 적을 출현시킨 다음 타이머를 리셋합니다.
 ```
+
+## Spawner의 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/b91d7072-a51d-4ec1-be7c-bf0c138f0288)
+```
+Create Empty로 빈 오브젝트를 작성하고 Spawners라는 이름을 붙인 뒤 SpawnController 컴포넌트를 적용합니다.
+```
