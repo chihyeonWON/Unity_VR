@@ -313,4 +313,7 @@ Create Empty로 빈 오브젝트를 작성하고 Spawners라는 이름을 붙인
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/52240a5b-3e98-4dfa-ac5a-271977754368)
 ```
 Spawners 오브젝트의 자식 요소로 EnemySpawner 프리팹을 5개를 배치합니다.
+
+프리팹의 위치를 랜덤으로 수정한 후 실행하면 적을 아무리 잡고 잡아도 5개의 Spawner에서 무한으로 계속해서
+적이 출현하는 것을 알 수 있습니다.
 ```
