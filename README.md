@@ -273,3 +273,10 @@ OnHitMessage를 보내게 됩니다.
 
 작성한 컴포넌트(Enemy)를 ZomBear 프리팹에 적용하고 실행하여 ZomBear를 총알로 맞췄을 때 총알과 적이 사라지게 됩니다.
 ```
+## 적의 출현 지점을 나타내는 EnemySpawner C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/0a57265b-0cda-4df8-86a0-78d954346edf)
+```
+적의 프리팹을 에디터에서 설정할 수 있도록 enemyPrefab 프로퍼티를 정의합니다.
+enemy 라는 변수는 spawner 에서 출현한 적을 보유해 두기 위한 것입니다.
+Spawn 함수는 다른 클래스로부터 호출하는 것을 가정한 함수로, Spawner에 적이 출현 중이 아니면 그 위치에 적을 생성합니다.
+```
