@@ -290,3 +290,15 @@ Spawn 함수는 다른 클래스로부터 호출하는 것을 가정한 함수�
 
 EnemySpawner 오브젝트를 Prefabs로 드래그 앤 드롭해서 프리팹화하고 하이어라키 창의 EnemySpawner는 삭제합니다.
 ```
+## 적의 출현을 제어하는 SpawnController C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/84457911-f8e3-4597-a62a-a69b3bccf832)
+```
+EnemySpawner 프리팹을 일정 간격으로 여러 개 배치하여
+그 중 어느 하나에서 적을 출현시키는 시스템인 SpawnController 컴포넌트를 작성합니다.
+
+spawnInterval을 정의해 적 출현 시간을 설정할 수 있게 합니다.
+
+start함수에서 GetComponentsInChildren이라는 함수로 Spawner의 리스트를 구현합니다.
+update함수에서 타이머의 경과 시간을 갱신하고, 출현 시간 이상 경과하는 경우에는 랜덤으로 선택한 Spawner로부터
+적을 출현시킨 다음 타이머를 리셋합니다.
+```
