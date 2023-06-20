@@ -280,3 +280,13 @@ OnHitMessage를 보내게 됩니다.
 enemy 라는 변수는 spawner 에서 출현한 적을 보유해 두기 위한 것입니다.
 Spawn 함수는 다른 클래스로부터 호출하는 것을 가정한 함수로, Spawner에 적이 출현 중이 아니면 그 위치에 적을 생성합니다.
 ```
+## EnemySpawner 프리팹의 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/4ce6f25c-472a-41e5-aa7a-5e7553029397)
+```
+씬에 위치한 ZomBear 3개를 모두 삭제하고 Create Empty로 빈 오브젝트를 생성하고
+이름을 EnemySpawner로 변경한 후 EnemySpawner 컴포넌트를 적용합니다.
+
+그 후 Enemy Prefab 프로퍼티에 ZomBear 프리팹을 드래그 앤 드롭으로 설정합니다.
+
+EnemySpawner 오브젝트를 Prefabs로 드래그 앤 드롭해서 프리팹화하고 하이어라키 창의 EnemySpawner는 삭제합니다.
+```
