@@ -317,3 +317,16 @@ Spawners 오브젝트의 자식 요소로 EnemySpawner 프리팹을 5개를 배�
 프리팹 5개 각각의 위치를 수정한 후 실행합니다.
 적을 아무리 잡고 잡아도 5개의 Spawner에서 무한으로 계속해서 적이 출현하는 걸 알 수 있습니다.
 ```
+## Shooter 스크립트로 연출 재생
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/b0d410d1-e90e-44de-a69d-9936bba3dbd2)
+```
+총알을 발사할 때 파티클 연출을 재생하도록 Shooter 스크립트를 수정하였습니다.
+
+gunParticle 프로퍼티를 추가하고 재생하는 파티클 연출을 설정할 수 있게 했으며 Shoot 함수에서 이 연출을 재생합니다.
+
+프리팹의 GunParticles를 GunBarrelEnd의 자식 요소로 합니다.
+
+그 후 PlayerGun의 GunParticle 프로퍼티에 GunParticles를 드래그 앤 드롭으로 설정한 후
+
+실행하여 총알이 발사될 때 파티클 연출이 재생되는 것을 확인할 수 있습니다.
+```
