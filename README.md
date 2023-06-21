@@ -330,3 +330,20 @@ gunParticle 프로퍼티를 추가하고 재생하는 파티클 연출을 설정
 
 실행하여 총알이 발사될 때 파티클 연출이 재생되는 것을 확인할 수 있습니다.
 ```
+
+## Bullet 스크립로 연출 재생 
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/bcddf0ae-4a58-49f1-8d36-f74b1c3c0dab)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/2331f229-a0c7-46ad-b299-58287a70eada)
+```
+발사한 총알이 적에게 적중했을 때 연출을 재생하도록 Bullet 스크립트를 수정하였습니다.
+
+hitParticlePrefab으로서 연출이 자동 재생되는 프리팹을 프로퍼티로 설정합니다.
+총알의 발사 적중 시점에 프리팹으로부터 게임 오브젝트를 생성함으로써 연출이 재생됩니다.
+
+HitParticles Prefab의 Particle System 컴포넌트의 Play On Awake에 체크하여 자동 재생되도록 하고
+생성한 게임 오브젝트가 자동으로 제거되도록 AutoDestroy 컴포넌트를 적용하고 Lifetime 프로퍼티를 0.4로 설정합니다.
+
+그 후 Bullet 프리팹에서 Bullet 컴포넌트의 Hit Particle Prefab의 프로퍼티로 HitParticles 프리팹을 드래그 앤 드롭합니다.
+
+실행해서 총알 발사가 적에게 적중했을 때 연출이 재생되는 것을 확인할 수 있습니다.
+```
