@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  hitParticlePrefab: {fileID: 19800000, guid: ef39ae7291c751249b296f00bf6fb042, type: 3}
 --- !u!114 &-1020946228724757371
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] float speed = 20f; // 총알 속도 [m/s]
 
+    [SerializeField] ParticleSystem hitParticlePrefab; // 총알이 적중할 때의 프리팹
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,9 @@ public class Bullet : MonoBehaviour
     {
         // 충돌 대상에 "OnHitBullet" 메시지
         other.SendMessage("OnHitBullet");
+
+        // 총알 적중 지점에 연출 자동 재생의 게임 오브젝트를 생성
+        Instantiate(hitParticlePrefab, transform.position, transform.rotation);
 
         // 자신의 게임 오브젝트를 제거
         Destroy(gameObject);
