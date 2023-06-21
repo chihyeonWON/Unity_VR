@@ -7,6 +7,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject bulletPrefab; // 총알 프리팹
     [SerializeField] Transform gunBarrelEnd; // 총구(총알의 발사 위치)
 
+    [SerializeField] ParticleSystem gunParticle; // 발사 시 연출
+
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +22,9 @@ public class Shooter : MonoBehaviour
         {
             // 프리팹을 바탕으로 씬상에 총알을 생성
             Instantiate(bulletPrefab, gunBarrelEnd.position, gunBarrelEnd.rotation);
+
+            // 발사 시 연출을 재생
+            gunParticle.Play();
         }
     }
 }
