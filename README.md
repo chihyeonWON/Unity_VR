@@ -1,4 +1,4 @@
-![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/0f295697-a20d-460b-be82-3cc9b64dea5d)# Unity_Project
+# Unity_Project
 Unity_Project on 2023 Summer Vacation.
 
 ## Unity 설치하기
@@ -413,4 +413,19 @@ Loop 프로퍼티에 체크를 합니다.
 볼륨이 너무 크기에 Volume 프로퍼티를 0.2로 설정하였습니다.
 
 실행하면 BGM이 재생됩니다.
+```
+## [UI] 제한 시간 표시 Text
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/af47980f-1ab6-4c6e-9841-a60fb4f1f227)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/e62441fb-4cbc-4731-a010-d60268e5357c)    
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/f1666e49-1c1d-4d2a-8d36-ef3e75673b2a)
+
+```
+Canvas와 그 자식요소에 Text를 생성하고 Canvas 컴포넌트의 Render Mode를 World Space로 변경한 후
+PosX = 0, PosY = 0, PosZ = 800, Width = 1920, Height = 1080 으로 설정합니다.
+
+Text 오브젝트를 선택하고 Text 프로퍼티 창에 '남은 시간: 30초'를 입력하고
+FontSize, Alignment, Horizontal Overflow, Vertical Overflow 프로퍼티를 수정합니다.
+
+또 Color 프로퍼티에서 빨간색으로 설정한 후 Rect Transform 컴포넌트의 PosX, PosY 프로퍼티를 0, 360으로 설정한후
+오브젝트 명을 Text에서 RemainTimer로 변경하였습니다.
 ```
