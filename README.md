@@ -358,3 +358,9 @@ Play on Awake에 체크를 해제(자동으로 재생되는 것을 방지, 스�
 Spatial Blend를 0.8로 설정합니다.(3D 엔진이 오디오 소스에 영향을 미치는 정도를 뜻함, 즉 음원과의 위치 관계를 어느 정도 반영할지 결정)
 0이면 위치 관계에 관계없이 같은 소리를 득고 1에 가까울수록 위치 관계를 반영한 소리르 듣는 것
 ```
+## 사격 시 효과음이 나도록 Shooter C# Script 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/562e5393-d6df-4385-bb41-b143203417db)
+```
+Shooter 스크립트 내부에 gunAudioSource 멤버 변수를 선언, 발사 시 AudioSource를
+프로퍼티에서 지정해서 지정한 음원을 사격 시 gunAudioSource.Play()로 재생하는 처리를 스크립트에 추가하였습니다.
+```
