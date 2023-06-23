@@ -332,7 +332,7 @@ gunParticle 프로퍼티를 추가하고 재생하는 파티클 연출을 설정
 ```
 
 ## Bullet 스크립트로 연출 재생 
-![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/bcddf0ae-4a58-49f1-8d36-f74b1c3c0dab)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/bcddf0ae-4a58-49f1-8d36-f74b1c3c0dab)   
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/2331f229-a0c7-46ad-b299-58287a70eada)
 ```
 발사한 총알이 적에게 적중했을 때 연출을 재생하도록 Bullet 스크립트를 수정하였습니다.
@@ -346,4 +346,15 @@ HitParticles Prefab의 Particle System 컴포넌트의 Play On Awake에 체크�
 그 후 Bullet 프리팹에서 Bullet 컴포넌트의 Hit Particle Prefab의 프로퍼티로 HitParticles 프리팹을 드래그 앤 드롭합니다.
 
 실행해서 총알 발사가 적에게 적중했을 때 연출이 재생되는 것을 확인할 수 있습니다.
+```
+## 사격 시의 효과음 추가
+[오디오 소스 유니티 매뉴얼](https://docs.unity3d.com/kr/560/Manual/class-AudioSource.html)   
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/bc66de31-aa60-4cbc-8126-7f5be402352b)
+```
+먼저 하이어라키 창의 GunBarrelEnd(총구)에 Audio Source 컴포넌트를 적용합니다.
+
+그 후 Audio Source 컴포넌트의 AudioClip 프로퍼티에 프로젝트 창의 Audio/Effects/Player GunShot을 설정합니다.
+Play on Awake에 체크를 해제(자동으로 재생되는 것을 방지, 스크립트의 Play()함수로 소리 재생) 
+Spatial Blend를 0.8로 설정합니다.(3D 엔진이 오디오 소스에 영향을 미치는 정도를 뜻함, 즉 음원과의 위치 관계를 어느 정도 반영할지 결정)
+0이면 위치 관계에 관계없이 같은 소리를 득고 1에 가까울수록 위치 관계를 반영한 소리르 듣는 것
 ```
