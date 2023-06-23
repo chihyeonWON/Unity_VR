@@ -363,4 +363,9 @@ Spatial Blend를 0.8로 설정합니다.(3D 엔진이 오디오 소스에 영향
 ```
 Shooter 스크립트 내부에 gunAudioSource 멤버 변수를 선언, 발사 시 AudioSource를
 프로퍼티에서 지정해서 지정한 음원을 사격 시 gunAudioSource.Play()로 재생하는 처리를 스크립트에 추가하였습니다.
+
+또 PlayerGun 게임 오브젝트에 적용된 Shooter 컴포넌트의 Gun Audio Soure 프로퍼티에 하이어라키 창으로부터
+GunBarrelEnd를 드래그 앤 드롭하여 설정합니다.
+
+실행해서 사격했을 때 소리가 재생되는 것을 확인할 수 있습니다.
 ```
