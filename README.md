@@ -359,7 +359,8 @@ Spatial Blend를 0.8로 설정합니다.(3D 엔진이 오디오 소스에 영향
 0이면 위치 관계에 관계없이 같은 소리를 득고 1에 가까울수록 위치 관계를 반영한 소리르 듣는 것
 ```
 ## 사격 시 효과음이 나도록 Shooter C# Script 수정
-![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/562e5393-d6df-4385-bb41-b143203417db)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/562e5393-d6df-4385-bb41-b143203417db)    
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/6bb59730-273c-42a5-a940-d4bfef1415a5)
 ```
 Shooter 스크립트 내부에 gunAudioSource 멤버 변수를 선언, 발사 시 AudioSource를
 프로퍼티에서 지정해서 지정한 음원을 사격 시 gunAudioSource.Play()로 재생하는 처리를 스크립트에 추가하였습니다.
