@@ -8,8 +8,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] AudioClip spawnClip; // 출현 시의 AudioClip
     [SerializeField] AudioClip hitClip; // 총알 명중 시의 AudioClip
 
-    // 쓰러뜨렸을 때 무효화하기 위해서 콜라이더와 렌더러를 갖고 있는다
+    // 쓰러뜨렸을 때 무효화하기 위해서 콜라이더를 갖고 있는다
     [SerializeField] Collider enemyCollider; // 콜라이더
+    [SerializeField] Renderer enemyRenderer; // 렌더러
 
     AudioSource audioSource; // 재생에 사용하는 AudioSource
 
@@ -38,6 +39,6 @@ public class Enemy : MonoBehaviour
         enemyCollider.enabled = false;
 
         // 자신의 게임 오브젝트를 일정 시간 후에 제거
-        Destroy(gameObject, 0.3f);
+        Destroy(gameObject, 0.4f);
     }
 }
