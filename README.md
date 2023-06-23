@@ -331,7 +331,7 @@ gunParticle 프로퍼티를 추가하고 재생하는 파티클 연출을 설정
 실행하여 총알이 발사될 때 파티클 연출이 재생되는 것을 확인할 수 있습니다.
 ```
 
-## Bullet 스크립로 연출 재생 
+## Bullet 스크립트로 연출 재생 
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/bcddf0ae-4a58-49f1-8d36-f74b1c3c0dab)
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/2331f229-a0c7-46ad-b299-58287a70eada)
 ```
