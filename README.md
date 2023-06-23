@@ -1,4 +1,4 @@
-# Unity_Project
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/0f295697-a20d-460b-be82-3cc9b64dea5d)# Unity_Project
 Unity_Project on 2023 Summer Vacation.
 
 ## Unity 설치하기
@@ -400,4 +400,17 @@ Enemy Collider 프로퍼티에는 ZomBear 프리팹 자신을 드래그 앤드�
 Enemy Renderer 프로퍼티에는 ZomBea 프리팹의 자식 요소를 드래그 앤 드롭으로 설정합니다.
 
 설정하고 실행하면 적이 출현할 때와 적에게 총알이 명중했을 때 소리가 재생됩니다.
+```
+## BGM(Background Music) 게임 브금 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/7f34f0e2-b652-489a-9ba2-8c76036673b8)
+```
+BGM 흔히 말해 브금이라고 하는 것을 설정해 보았습니다.
+씬에 들어간 후 루프 반복 재생 로직을 돌려서 중단되지 않도록 합니다.
+
+BGM을 재생하기 위한 bgm 게임 오브젝트를 생성하고 Audio Source 컴포넌트를 적용,
+AudioClip 프로퍼티에 Background Music 소스를 설정하고
+Loop 프로퍼티에 체크를 합니다.
+볼륨이 너무 크기에 Volume 프로퍼티를 0.2로 설정하였습니다.
+
+실행하면 BGM이 재생됩니다.
 ```
