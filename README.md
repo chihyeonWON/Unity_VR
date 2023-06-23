@@ -380,3 +380,24 @@ GunBarrelEnd를 드래그 앤 드롭하여 설정합니다.
 
 ZomBear 프리팹에 Audio Source 컴포넌트를 적용하고 Play on Awake 해제, Spatial Blend를 0.8로 설정합니다.
 ```
+## 적의 위치가 나타났을 때, 적이 총알에 맞았을 때의 효과음 추가 (Enemy C# Script 수정)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/260c673f-d286-4cb5-b467-2a62643323a7)
+```
+적의 출현 시와 총알의 명중 시에 해당하는 AudioClip을 프로퍼티로서 정의하고
+콜라이더와 렌더러의 프로퍼티는 ZomBear 자신의 콜라이더와 렌더러를 지정하도록 하여 총알을 맞았을 때의 처리에
+필요하기에 보유합니다
+
+출현 시의 소리를 Start함수에서 AudioSource 컴포넌트를 취득해서 재생합니다.
+
+명중 시의 소리를 재생한 후에 총알을 맞았을 때 GoDown 함수를 호출합니다.
+소리의 재생은 게임 오브젝트를 제거하기 전에 재생되어야 하므로 1초 후에 삭제하도록 설정합니다.
+(Destroy(gameObject, 1f))
+goDown 함수에서는 콜라이더와 렌더러를 무효화함으로써 충돌 판정과 표시를 지우고, 적이 없어진 것처럼 보이게 합니다.
+
+ZomBear 프리팹의 Spawn Clip 프로퍼티에 ZomBear Death를 설정합니다.
+Hit Clip 프로퍼티에는 ZomBear Hurt를 설정합니다.
+Enemy Collider 프로퍼티에는 ZomBear 프리팹 자신을 드래그 앤드롭으로 설정합니다.
+Enemy Renderer 프로퍼티에는 ZomBea 프리팹의 자식 요소를 드래그 앤 드롭으로 설정합니다.
+
+설정하고 실행하면 적이 출현할 때와 적에게 총알이 명중했을 때 소리가 재생됩니다.
+```
