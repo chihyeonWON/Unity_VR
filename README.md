@@ -455,3 +455,9 @@ Font Size, Alignment, Horizontal Overflow, Vertical Overflow, PosX, PosY 프로�
 
 또 오브젝트의 이름을 Text에서 Score로 수정한 후 글씨 색을 지정해줍니다.
 ```
+## 점수 Score C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/8e327f57-e9b8-47ab-973f-7b7ffd8b5860)
+```
+현재 점수를 저장하기 위한 Points 프로퍼티를 설정하고 AddScore 함수가 호출되면 점수 텍스트가 갱신되도록
+설계하였습니다. Score 스크립트를 Score Text의 컴포넌트로 추가합니다.
+```
