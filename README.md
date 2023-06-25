@@ -461,3 +461,10 @@ Font Size, Alignment, Horizontal Overflow, Vertical Overflow, PosX, PosY 프로�
 현재 점수를 저장하기 위한 Points 프로퍼티를 설정하고 AddScore 함수가 호출되면 점수 텍스트가 갱신되도록
 설계하였습니다. Score 스크립트를 Score Text의 컴포넌트로 추가합니다.
 ```
+## Score Tag 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/32a60a1c-4c88-4f6f-865b-78c6666481da)
+```
+게임 오브젝트를 식별하기 위해 사용자가 자유롭게 붙일 수 있는 이름(Tag)를 Score Text에 추가하였습니다.
+
+하이어라키 창의 Score 텍스트를 선택하고 인스펙터 창의 Tag - add Tag - Score 태그를 생성하고 설정합니다.
+```
