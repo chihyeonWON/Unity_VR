@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
         Points += addPoint;
 
         // 점수 갱신
-        uiText.text = string.Format("점수:{0:D3}점", Points);
+        uiText.text = string.Format("점수 : {0:D3}점", Points);
     }
 }
 
