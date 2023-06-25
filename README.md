@@ -468,3 +468,17 @@ Font Size, Alignment, Horizontal Overflow, Vertical Overflow, PosX, PosY 프로�
 
 하이어라키 창의 Score 텍스트를 선택하고 인스펙터 창의 Tag - add Tag - Score 태그를 생성하고 설정합니다.
 ```
+## Enemy 스크립트를 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/7f3a6b6d-da6d-4bed-ae97-9e614c69fe79)
+```
+적을 쓰러뜨렸을 때 더해지는 점수를 에디터에 설정할 수 있도록 point로 설정하고
+Score를 참조하는 변수 score를 추가합니다.
+
+또 Start함수에서 Score Text 게임 오브젝트를 FindWithTag 함수를 사용하여
+Score 태그가 붙은 게임 오브젝트를 찾습니다.
+
+그 게임 오브젝트에 해당하는 컴포넌트를 취득할 수 있게 되었고
+GoDown 함수에서 에디터에 설정한 변수 point 값을 넘겨주면서 AddScore 함수를 호출해서
+
+실행하여 총으로 적을 처치했을 때 점수가 +1 되는 것을 확인할 수 있습니다. 
+```
