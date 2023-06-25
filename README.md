@@ -482,3 +482,31 @@ GoDown 함수에서 에디터에 설정한 변수 point 값을 넘겨주면서 A
 
 실행하여 총으로 적을 처치했을 때 점수가 +1 되는 것을 확인할 수 있습니다. 
 ```
+## [UI] 게임 준비, 시작, 종료 표시 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/ae003413-6b2e-40ca-9539-a1ea55df5174)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/34a111ec-e8f4-4ced-9bab-dd7bc1f27e5d)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/13c4f24a-63f1-44ee-a3bf-4bba30b8731d)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/27e6e901-a2e0-49b1-be68-807808481a03)
+```
+준비, 시작, 종료 Text(GameReady, GameStart, GameOver)를 다음과 같이 설정합니다.
+
+설정한 후 인스펙터 창에서 오브젝트 명의 체크표시를 해제하여 모두 숨겨놓습니다.
+```
+## [UI] 게임 결과 표시 작성
+
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/5279fe4d-3a20-448c-bba3-8f5463a13a9d)
+#### Retry Button
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/a75ac044-abff-48f3-a1d8-1f41329235a0)
+```
+Panel을 하나 생성하고 자식 요소로 두 개의 Text와 하나의 Button을 생성합니다.
+그 후 Panel의 이름을 Result로 변경합니다.
+그 후 Anchor Presets 을 Center/Middle 로 변경하고 Width :600, Height: 400으로 설정합니다.
+
+Textures/UIPanel을 Source Image 파라미터로 드래그앤 드롭하여 설정하고 Color를 설정합니다.
+
+첫 번째 Text는 Title로 변경하고 위치와 폰트사이즈, 색상을 설정하고
+두 번째 Text는 Score로 변경하고 위치, 폰트사이즈, 색상을 설정한 후 Score 컴포넌트를 적용합니다.
+버튼은 Retry로 변경하고 크기와 이미지를 설정합니다.
+
+버튼의 자식요소의 Text의 텍스트/폰트/색상을 변경합니다.
+```
