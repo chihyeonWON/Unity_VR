@@ -429,3 +429,17 @@ FontSize, Alignment, Horizontal Overflow, Vertical Overflow 프로퍼티를 수�
 또 Color 프로퍼티에서 빨간색으로 설정한 후 Rect Transform 컴포넌트의 PosX, PosY 프로퍼티를 0, 360으로 설정한후
 오브젝트 명을 Text에서 RemainTimer로 변경하였습니다.
 ```
+## 남은 시간을 카운트하는 RemainTimer C# Script의 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/722ccd49-86f3-4a66-a0bf-55b1b184a5e6)
+```
+게임 제한 시간을 에디터에서 설정할 수 있도록 gameTime 프로퍼티를 작성하고
+Update 함수에서 currentTime에는 게임의 제한 시간을 대입합니다.
+타이머의 남은 시간을 갱신하고, 0초 이하가 되지 않게 합니다.
+현재 남은 시간을 Text 컴포넌트의 텍스트로 변경함으로써 표시를 갱신합니다.
+
+IsCountingDown 함수는 남은 시간의 카운트 여부를 판정합니다.
+
+작성된 RemainTimer 컴포넌트를 하이어라키의 RemainTimer Text위로 드래그 앤 드롭한 후
+
+실행하여 남은 시간이 카운트 되어 0초에 카운트가 정지되는 것을 확인합니다.
+```
