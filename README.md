@@ -443,3 +443,21 @@ IsCountingDown 함수는 남은 시간의 카운트 여부를 판정합니다.
 
 실행하여 남은 시간이 카운트 되어 0초에 카운트가 정지되는 것을 확인합니다.
 ```
+## [UI] 점수 표시 Text
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/73c47e68-b202-4812-8c02-3919b059b366)   
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/ff912666-cc04-40fb-8da9-fd8dc3ebbe5e)
+```
+게임 플레이를 잘하는 지 확인하기 위한 지표로 점수 시스템을 도입해보았습니다.
+
+기존 Canvas - Text 오브젝트를 생성하고 '점수 : 000점'을 입력하고
+Font Size, Alignment, Horizontal Overflow, Vertical Overflow, PosX, PosY 프로퍼티를
+각각 적절하게 설정해줍니다.
+
+또 오브젝트의 이름을 Text에서 Score로 수정한 후 글씨 색을 지정해줍니다.
+```
+## 점수 Score C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/8e327f57-e9b8-47ab-973f-7b7ffd8b5860)
+```
+현재 점수를 저장하기 위한 Points 프로퍼티를 설정하고 AddScore 함수가 호출되면 점수 텍스트가 갱신되도록
+설계하였습니다. Score 스크립트를 Score Text의 컴포넌트로 추가합니다.
+```
