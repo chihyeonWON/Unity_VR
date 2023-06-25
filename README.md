@@ -482,3 +482,13 @@ GoDown 함수에서 에디터에 설정한 변수 point 값을 넘겨주면서 A
 
 실행하여 총으로 적을 처치했을 때 점수가 +1 되는 것을 확인할 수 있습니다. 
 ```
+## [UI] 게임 준비, 시작, 종료 표시 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/ae003413-6b2e-40ca-9539-a1ea55df5174)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/34a111ec-e8f4-4ced-9bab-dd7bc1f27e5d)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/13c4f24a-63f1-44ee-a3bf-4bba30b8731d)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/27e6e901-a2e0-49b1-be68-807808481a03)
+```
+준비, 시작, 종료 Text(GameReady, GameStart, GameOver)를 다음과 같이 설정합니다.
+
+설정한 후 인스펙터 창에서 오브젝트 명의 체크표시를 해제하여 모두 숨겨놓습니다.
+```
