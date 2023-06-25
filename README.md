@@ -524,5 +524,16 @@ SceneChanger 이름의 빈 오브젝트를 생성한 후 SceneChanger 컴포넌�
 Retry Button 을 클릭한 후 onClick 이벤트에 SceneChanger 오브젝트를 넣고 SceneChanger -> ReloadScene()을 선택합니다.
 
 그 후 SceneChanger를 프리팹화하여 공통으로 사용할 수 있도록 설정하고 씬을 실행하고 Retry 버튼을 눌러
-제한 시간이 초기화되는 것을 확인하고 Retry 오브젝트의 체크를 해제하여 숨김상태로 만듭니다.
+제한 시간이 초기화되는 것을 확인합니다.
+```
+## ResultScore C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/ad18d49d-f4b2-427a-afa8-56eece165b2f)
+```
+획득한 점수를 결과 표시의 득점에 반영하는 ResultScore 스크립트를 작성합니다.
+
+Score 컴포넌트를 태그 검색을 이용해서 구한 다음 Score의 컴포넌트에 저장되어 있는 Points 값을
+Text 컴포넌트의 text 프로퍼티에 대입함으로써 점수 표시를 갱신합니다.
+그 후 Result 패널의 Score Text에 ResultScore 컴포넌트를 적용합니다.
+
+Result 패널은 체크 해제하여 숨김상태로 만듭니다.
 ```
