@@ -510,3 +510,19 @@ Textures/UIPanel을 Source Image 파라미터로 드래그앤 드롭하여 설�
 
 버튼의 자식요소의 Text의 텍스트/폰트/색상을 변경합니다.
 ```
+## SceneChanger C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/588ee61b-f325-4c89-8b66-0f0a9e768da1)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/6b483064-a049-4880-9a23-9387fd56b806)
+```
+유니티에는 SceneManager 라는 씬을 관리하는 기능이 있으며, 여러 개의 씬을 바꾸거나 동시에 여러 개의 씬을
+읽어 들일 수 있습니다. ReloadScene 함수를 이용하여 현재 사용 중인 씬을 다시 읽어들이는(초기 상태)로 되돌릴
+수 있습니다.
+
+Retry 버튼을 눌렀을 때 현재의 씬을 다시 로드하는 기능을 넣어주기 위해서 SceneChanger 스크립트를 작성하고 
+SceneChanger 이름의 빈 오브젝트를 생성한 후 SceneChanger 컴포넌트를 적용합니다.
+
+Retry Button 을 클릭한 후 onClick 이벤트에 SceneChanger 오브젝트를 넣고 SceneChanger -> ReloadScene()을 선택합니다.
+
+그 후 SceneChanger를 프리팹화하여 공통으로 사용할 수 있도록 설정하고 씬을 실행하고 Retry 버튼을 눌러
+제한 시간이 초기화되는 것을 확인하고 Retry 오브젝트의 체크를 해제하여 숨김상태로 만듭니다.
+```
