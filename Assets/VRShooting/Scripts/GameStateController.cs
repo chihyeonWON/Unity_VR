@@ -57,12 +57,13 @@ public class GameStateController : MonoBehaviour
             Controller.gameReady.SetActive(false);
         }
     }
-
+    
+    // 게임 시작 표시 스테이트
     class StartState : BaseState
     {
         float timer;
 
-        public ReadyState(GameStateController c) : base(c) { }
+        public StartState(GameStateController c) : base(c) { }
         public override void OnEnter()
         {
             // 타이머를 표시
@@ -97,7 +98,7 @@ public class GameStateController : MonoBehaviour
     // 게임 중 스테이트
     class PlayingState : BaseState
     {
-        public ReadyState(GameStateController c) : base(c) { }
+        public PlayingState(GameStateController c) : base(c) { }
         public override StateAction OnUpdate()
         {
             // 타이머가 종료하면 게임 오버
@@ -115,6 +116,33 @@ public class GameStateController : MonoBehaviour
 
             // 적의 발생을 멈춘다.
             Controller.spawners.SetActive(false);
+        }
+    }
+
+    // 게임 오버 표시 스테이트
+    class GameOverState : BaseState
+    {
+        float timer;
+        public GameOverState(GameStateController c) : base(c) { }
+        public override void OnEnter()
+        {
+            // 게임 오버를 표시
+            Controller.gameOver.SetActive(true);
+        }
+        public override StateAction OnUpdate()
+        {
+            timer += Time.deltaTime;
+            // 2초 후에 다음으로
+            if (timer > 2.0f)
+            {
+                return StateAction.STATE_ACTION_NEXT;
+            }
+            return StateAction.STATE_ACTION_WAIT;
+        }
+        public override void onExit()
+        {
+            // 게임 오버 문자열을 숨김
+            Controller.gameOver.SetActive(false);
         }
     }
 }
