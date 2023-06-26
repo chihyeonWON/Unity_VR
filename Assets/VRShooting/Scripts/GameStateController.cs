@@ -92,6 +92,29 @@ public class GameStateController : MonoBehaviour
             // start 문자열을 숨김
             Controller.gameStart.SetActive(false);
         }
+    }
 
+    // 게임 중 스테이트
+    class PlayingState : BaseState
+    {
+        public ReadyState(GameStateController c) : base(c) { }
+        public override StateAction OnUpdate()
+        {
+            // 타이머가 종료하면 게임 오버
+            if (!Controller.timer.IsCountingDown())
+            {
+                return StateAction.STATE_ACTION_NEXT;
+            }
+            return StateAction.STATE_ACTION_WAIT;
+        }
+
+        public override void onExit()
+        {
+            // 플레이어를 숨김
+            Controller.player.SetActive(false);
+
+            // 적의 발생을 멈춘다.
+            Controller.spawners.SetActive(false);
+        }
     }
 }
