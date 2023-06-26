@@ -57,4 +57,41 @@ public class GameStateController : MonoBehaviour
             Controller.gameReady.SetActive(false);
         }
     }
+
+    class StartState : BaseState
+    {
+        float timer;
+
+        public ReadyState(GameStateController c) : base(c) { }
+        public override void OnEnter()
+        {
+            // 타이머를 표시
+            Controller.timer.gameObject.SetActive(true);
+
+            // start 문자열을 표시
+            Controller.gameStart.SetActive(true);
+
+            // player를 표시
+            Controller.player.SetActive(true);
+
+            // spawners를 표시
+            Controller.spawners.SetActive(true);
+        }
+        public override StateAction OnUpdate()
+        {
+            timer += Time.deltaTime;
+            // 1초 후에 다음으로
+            if (timer > 1.0f)
+            {
+                return StateAction.STATE_ACTION_NEXT;
+            }
+            return StateAction.STATE_ACTION_WAIT;
+        }
+        public override void onExit()
+        {
+            // start 문자열을 숨김
+            Controller.gameStart.SetActive(false);
+        }
+
+    }
 }
