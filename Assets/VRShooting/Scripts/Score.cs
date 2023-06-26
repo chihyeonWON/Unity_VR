@@ -6,11 +6,10 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class Score : MonoBehaviour
 {
-    Text uiText; // UIText ÄÄÆ÷³ÍÆ®
+    Text uiText;                                // UIText ì»´í¬ë„ŒíŠ¸
 
-    public int Points { get; private set; } // ÇöÀçÀÇ Á¡¼ö Æ÷ÀÎÆ®
+    public int Points { get; private set; }     // í˜„ì¬ì˜ ì ìˆ˜ í¬ì¸íŠ¸
 
-    // Start is called before the first frame update
     void Start()
     {
         uiText = GetComponent<Text>();
@@ -18,11 +17,10 @@ public class Score : MonoBehaviour
 
     public void AddScore(int addPoint)
     {
-        // ÇöÀçÀÇ Æ÷ÀÎÆ®¿¡ ´õÇÔ
+        // í˜„ì¬ì˜ í¬ì¸íŠ¸ì— ë”í•¨
         Points += addPoint;
 
-        // Á¡¼ö °»½Å
-        uiText.text = string.Format("Á¡¼ö : {0:D3}Á¡", Points);
+        // ì ìˆ˜ ê°±ì‹ 
+        uiText.text = string.Format("ì ìˆ˜ï¼š{0:D3}ì ", Points);
     }
 }
-
