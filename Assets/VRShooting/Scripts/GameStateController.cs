@@ -145,4 +145,19 @@ public class GameStateController : MonoBehaviour
             Controller.gameOver.SetActive(false);
         }
     }
+
+    // 결과 표시 스테이트
+    class ResultState : BaseState
+    {
+        public ResultState(GameStateController c) : base(c) { }
+        public override void OnEnter()
+        {
+            // 결과 표시
+            Controller.result.SetActive(true);
+        }
+        public override StateAction OnUpdate()
+        {
+            return StateAction.STATE_ACTION_WAIT;
+        }
+    }
 }
