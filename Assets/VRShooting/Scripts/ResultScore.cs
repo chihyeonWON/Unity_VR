@@ -6,19 +6,18 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class ResultScore : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        // °ÔÀÓ ¿ÀºêÁ§Æ®¸¦ °Ë»ö
+        // ê²Œì„ ì˜¤ë¸Œì íŠ¸ë¥¼ ê²€ìƒ‰
         var gameObj = GameObject.FindWithTag("Score");
 
-        // gameObj¿¡ Æ÷ÇÔµÇ´Â Score ÄÄÆ÷³ÍÆ®¸¦ Ãëµæ
+        // gameObjì— í¬í•¨ë˜ëŠ” Score ì»´í¬ë„ŒíŠ¸ë¥¼ ì·¨ë“
         var score = gameObj.GetComponent<Score>();
 
-        // Text ÄÄÆ÷³ÍÆ®ÀÇ Ãëµæ
+        // Text ì»´í¬ë„ŒíŠ¸ì˜ ì·¨ë“
         var uiText = GetComponent<Text>();
 
-        // Á¡¼ö °»½Å
-        uiText.text = string.Format("Á¡¼ö : {0:D3}Á¡", score.Points);
+        // ì ìˆ˜ ê°±ì‹ 
+        uiText.text = string.Format("ì ìˆ˜ï¼š{0:D3}ì ", score.Points);
     }
 }
