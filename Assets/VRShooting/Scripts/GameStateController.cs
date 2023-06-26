@@ -11,6 +11,7 @@ public class GameStateController : MonoBehaviour
     [SerializeField] GameObject result;     // Result 게임 오브젝트 참조
     [SerializeField] GameObject player;     // PlayerGun 게임 오브젝트 참조
     [SerializeField] GameObject spawners;   // Spawner 게임 오브젝트 참조
+    [SerializeField] GameObject score; // Score 게임 오브젝트 참조
 
     // 스테이트 베이스 클래스
     abstract class BaseState
@@ -68,6 +69,9 @@ public class GameStateController : MonoBehaviour
         {
             // 타이머를 표시
             Controller.timer.gameObject.SetActive(true);
+
+            // 점수 표시
+            Controller.score.gameObject.SetActive(true);
 
             // start 문자열을 표시
             Controller.gameStart.SetActive(true);
