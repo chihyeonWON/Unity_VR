@@ -537,3 +537,46 @@ Text 컴포넌트의 text 프로퍼티에 대입함으로써 점수 표시를 �
 
 Result 패널은 체크 해제하여 숨김상태로 만듭니다.
 ```
+## 게임의 진행을 관리하는 GameStateController C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/565d2af7-58b2-4dee-81f5-3539ad1165ed)
+```
+지금까지 작성한 오브젝트 참조를 에디터에서 설정할 수 있게 합니다.
+```
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/b4951e55-d81b-4b90-b695-2761f459a761)
+```
+게임 상태를 나타내기 위해 BaseState 추상 클래스를 정의합니다.
+이 클래스는 부모 클래스인 GameStateController의 멤버 변수를 취급하기 위해 Controller 변수를 갖습니다.
+```
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/67ce7b34-afcf-46c6-b7da-1363e106c49b)
+```
+ReadyState 클래스는 Ready 오브젝트를 5초간만 표시하고 다음 상태로 전환합니다.
+경과 시간을 유지하기 위해서 timer 변수를 갖고 OnUpdate 함수에서 시간을 더해 5초 이상이 되면
+StateAction.STATE_ACTION_NEXT를 반환하고 다음 상태로 진행합니다.
+```
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/c31c0f83-2b10-40fe-8dd8-e12bcb32c268)
+```
+게임시작 StartState 클래스는 Timer, GameStart, PlayerGun, Spawners 오브젝트를 표시하며
+GameStart 오브젝트를 1초만 표시하고 다음의 상태로 전환합니다.
+```
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/e0822a9f-9226-4ba1-a061-1c84f2998781)
+```
+PlayingState 클래스는 OnUpdate 함수에서 제한 시간이 끝나기를 기다리고
+제한 시간이 종료되면 다음 상태로 전환합니다.
+
+OnExit 함수에서 PlayerGun, Spawners 오브젝트를 비표시로해서 처리를 멈춥니다.
+```
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/4241eebb-3531-4ed7-a59b-29d92146a520)
+```
+게임오버 클래스는 GameOver 오브젝트를 2초간만 표시하고 다음 상태로 전환합니다.
+```
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/8c35a215-1a6b-4811-96b6-d49b2f5d7c7a)
+```
+ResultState 클래스는 Result 오브젝트를 표시하고 이 이상 상태를 전환하지 않게 합니다.
+```
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/24504fde-c065-4051-8c91-6f3c2883241a)
+```
+GameStateController 빈 오브젝트를 생성하고 GameStateController 컴포넌트를 적용하고
+하이어라키 창에서 드래그 앤 드롭으로 각 프로퍼티를 설정합니다.
+
+실행해서 게임 준비 -> 게임 시작 -> 게임 중 -> 게임 종료 -> 결과 표시 순서로 작동하는 것을 확인할 수 있습니다.
+```    
