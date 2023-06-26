@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameStateController : MonoBehaviour
 {
-    [SerializeField] GameObject gameReady; // GameReady °ÔÀÓ ¿ÀºêÁ§Æ® ÂüÁ¶
-    [SerializeField] RemainTimer timer; // RemainTimer °ÔÀÓ ¿ÀºêÁ§Æ® ÂüÁ¶
-    [SerializeField] GameObject gameStart; // GameStart °ÔÀÓ ¿ÀºêÁ§Æ® ÂüÁ¶
-    [SerializeField] GameObject gameOver; // GameOver °ÔÀÓ ¿ÀºêÁ§Æ® ÂüÁ¶
-    [SerializeField] GameObject result; // Result °ÔÀÓ ¿ÀºêÁ§Æ® ÂüÁ¶
-    [SerializeField] GameObject player; // PlayerGun °ÔÀÓ ¿ÀºêÁ§Æ® ÂüÁ¶
-    [SerializeField] GameObject spawners; // Spawner °ÔÀÓ ¿ÀºêÁ§Æ® ÂüÁ¶
+    [SerializeField] GameObject gameReady;  // GameReady ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì°¸ì¡°
+    [SerializeField] RemainTimer timer;     // RemainTimer ì»´í¬ë„ŒíŠ¸ ì°¸ì¡°
+    [SerializeField] GameObject gameStart;  // GameStart ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì°¸ì¡°
+    [SerializeField] GameObject gameOver;   // GameOver ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì°¸ì¡°
+    [SerializeField] GameObject result;     // Result ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì°¸ì¡°
+    [SerializeField] GameObject player;     // PlayerGun ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì°¸ì¡°
+    [SerializeField] GameObject spawners;   // Spawner ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì°¸ì¡°
 
-    // ½ºÅ×ÀÌÆ® º£ÀÌ½º Å¬·¡½º
+    // ìŠ¤í…Œì´íŠ¸ ë² ì´ìŠ¤ í´ë˜ìŠ¤
     abstract class BaseState
     {
         public GameStateController Controller { get; set; }
@@ -27,10 +27,10 @@ public class GameStateController : MonoBehaviour
 
         public virtual void OnEnter() { }
         public virtual StateAction OnUpdate() { return StateAction.STATE_ACTION_NEXT; }
-        public virtual void onExit() { }
+        public virtual void OnExit() { }
     }
 
-    // °ÔÀÓ ½ÃÀÛ ÁØºñ ½ºÅ×ÀÌÆ®
+    // ê²Œì„ ì‹œì‘ ì¤€ë¹„ ìŠ¤í…Œì´íŠ¸
     class ReadyState : BaseState
     {
         float timer;
@@ -38,27 +38,27 @@ public class GameStateController : MonoBehaviour
         public ReadyState(GameStateController c) : base(c) { }
         public override void OnEnter()
         {
-            // ready ¹®ÀÚ¿­À» Ç¥½Ã
+            // ready ë¬¸ìì—´ì„ í‘œì‹œ
             Controller.gameReady.SetActive(true);
         }
         public override StateAction OnUpdate()
         {
             timer += Time.deltaTime;
-            // 5ÃÊ ÈÄ¿¡ ´ÙÀ½À¸·Î
-            if(timer > 5.0f)
+            // 5ì´ˆ í›„ì— ë‹¤ìŒìœ¼ë¡œ
+            if (timer > 5.0f)
             {
                 return StateAction.STATE_ACTION_NEXT;
             }
             return StateAction.STATE_ACTION_WAIT;
         }
-        public override void onExit()
+        public override void OnExit()
         {
-            // ready ¹®ÀÚ¿­À» ¼û±è
+            // ready ë¬¸ìì—´ì„ ìˆ¨ê¹€
             Controller.gameReady.SetActive(false);
         }
     }
-    
-    // °ÔÀÓ ½ÃÀÛ Ç¥½Ã ½ºÅ×ÀÌÆ®
+
+    // ê²Œì„ ì‹œì‘ í‘œì‹œ ìŠ¤í…Œì´íŠ¸
     class StartState : BaseState
     {
         float timer;
@@ -66,42 +66,42 @@ public class GameStateController : MonoBehaviour
         public StartState(GameStateController c) : base(c) { }
         public override void OnEnter()
         {
-            // Å¸ÀÌ¸Ó¸¦ Ç¥½Ã
+            // íƒ€ì´ë¨¸ë¥¼ í‘œì‹œ
             Controller.timer.gameObject.SetActive(true);
 
-            // start ¹®ÀÚ¿­À» Ç¥½Ã
+            // start ë¬¸ìì—´ì„ í‘œì‹œ
             Controller.gameStart.SetActive(true);
 
-            // player¸¦ Ç¥½Ã
+            // playerë¥¼ í‘œì‹œ
             Controller.player.SetActive(true);
 
-            // spawners¸¦ Ç¥½Ã
+            // spawnersë¥¼ í‘œì‹œ
             Controller.spawners.SetActive(true);
         }
         public override StateAction OnUpdate()
         {
             timer += Time.deltaTime;
-            // 1ÃÊ ÈÄ¿¡ ´ÙÀ½À¸·Î
+            // 1ì´ˆ í›„ì— ë‹¤ìŒìœ¼ë¡œ
             if (timer > 1.0f)
             {
                 return StateAction.STATE_ACTION_NEXT;
             }
             return StateAction.STATE_ACTION_WAIT;
         }
-        public override void onExit()
+        public override void OnExit()
         {
-            // start ¹®ÀÚ¿­À» ¼û±è
+            // Start ë¬¸ìì—´ì„ ìˆ¨ê¹€
             Controller.gameStart.SetActive(false);
         }
     }
 
-    // °ÔÀÓ Áß ½ºÅ×ÀÌÆ®
+    // ê²Œì„ ì¤‘ ìŠ¤í…Œì´íŠ¸
     class PlayingState : BaseState
     {
         public PlayingState(GameStateController c) : base(c) { }
         public override StateAction OnUpdate()
         {
-            // Å¸ÀÌ¸Ó°¡ Á¾·áÇÏ¸é °ÔÀÓ ¿À¹ö
+            // íƒ€ì´ë¨¸ê°€ ì¢…ë£Œí•˜ë©´ ê²Œì„ ì˜¤ë²„
             if (!Controller.timer.IsCountingDown())
             {
                 return StateAction.STATE_ACTION_NEXT;
@@ -109,55 +109,90 @@ public class GameStateController : MonoBehaviour
             return StateAction.STATE_ACTION_WAIT;
         }
 
-        public override void onExit()
+        public override void OnExit()
         {
-            // ÇÃ·¹ÀÌ¾î¸¦ ¼û±è
+            // í”Œë ˆì´ì–´ë¥¼ ìˆ¨ê¹€
             Controller.player.SetActive(false);
 
-            // ÀûÀÇ ¹ß»ıÀ» ¸ØÃá´Ù.
+            // ì ì˜ ë°œìƒì„ ë©ˆì¶˜ë‹¤
             Controller.spawners.SetActive(false);
         }
     }
 
-    // °ÔÀÓ ¿À¹ö Ç¥½Ã ½ºÅ×ÀÌÆ®
+    // ê²Œì„ ì˜¤ë²„ í‘œì‹œ ìŠ¤í…Œì´íŠ¸
     class GameOverState : BaseState
     {
         float timer;
         public GameOverState(GameStateController c) : base(c) { }
         public override void OnEnter()
         {
-            // °ÔÀÓ ¿À¹ö¸¦ Ç¥½Ã
+            // ê²Œì„ ì˜¤ë²„ë¥¼ í‘œì‹œ
             Controller.gameOver.SetActive(true);
         }
         public override StateAction OnUpdate()
         {
             timer += Time.deltaTime;
-            // 2ÃÊ ÈÄ¿¡ ´ÙÀ½À¸·Î
+            // 2ì´ˆ í›„ì— ë‹¤ìŒìœ¼ë¡œ
             if (timer > 2.0f)
             {
                 return StateAction.STATE_ACTION_NEXT;
             }
             return StateAction.STATE_ACTION_WAIT;
         }
-        public override void onExit()
+        public override void OnExit()
         {
-            // °ÔÀÓ ¿À¹ö ¹®ÀÚ¿­À» ¼û±è
+            // ê²Œì„ ì˜¤ë²„ë¥¼ ìˆ¨ê¹€
             Controller.gameOver.SetActive(false);
         }
     }
 
-    // °á°ú Ç¥½Ã ½ºÅ×ÀÌÆ®
+    // ê²°ê³¼ í‘œì‹œ ìŠ¤í…Œì´íŠ¸
     class ResultState : BaseState
     {
         public ResultState(GameStateController c) : base(c) { }
         public override void OnEnter()
         {
-            // °á°ú Ç¥½Ã
+            // ê²°ê³¼ í‘œì‹œ
             Controller.result.SetActive(true);
         }
-        public override StateAction OnUpdate()
+        public override StateAction OnUpdate() { return StateAction.STATE_ACTION_WAIT; }
+    }
+
+    // ê²Œì„ì˜ ìƒíƒœ ë¦¬ìŠ¤íŠ¸
+    List<BaseState> state;
+
+    // í˜„ì¬ì˜ ê²Œì„ ìƒíƒœ
+    int currentState;
+
+    void Start()
+    {
+        // ê²Œì„ì˜ ìƒíƒœë¥¼ ìˆœì„œëŒ€ë¡œ ë“±ë¡
+        state = new List<BaseState> {
+            new ReadyState(this),
+            new StartState(this),
+            new PlayingState(this),
+            new GameOverState(this),
+            new ResultState(this),
+        };
+
+        // ì²˜ìŒ ìƒíƒœì˜ ì‹œì‘ ì²˜ë¦¬
+        state[currentState].OnEnter();
+    }
+
+    void Update()
+    {
+        //  ìƒíƒœë¥¼ ê°±ì‹ 
+        var stateAction = state[currentState].OnUpdate();
+
+        // ë‹¤ìŒ ìƒíƒœë¡œ ì „í™˜í• ì§€ íŒì •
+        if (stateAction == BaseState.StateAction.STATE_ACTION_NEXT)
         {
-            return StateAction.STATE_ACTION_WAIT;
+            // ìƒíƒœ ì¢…ë£Œ ì²˜ë¦¬
+            state[currentState].OnExit();
+            // ë‹¤ìŒì˜ ìƒíƒœë¡œ
+            ++currentState;
+            // ìƒíƒœ ì‹œì‘ ì²˜ë¦¬
+            state[currentState].OnEnter();
         }
     }
 }
