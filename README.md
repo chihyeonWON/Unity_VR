@@ -593,3 +593,10 @@ ZomBear 프리팹에 EnemyAnimator Controller를 Animator 컴포넌트의 Contro
 외부 툴에서 작성한 애니메이션을 FBX 데이터로서 유니티로 임포트하여 애니메이션 클립으로
 등록할 수 있습니다. 클립을 컨트롤러에 스테이트로 배치함으로써 애니메이션을 간단하게 재생할 수 있습니다.
 ```
+## DOTween 플러그인 다운로드
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/aa4a93ff-d133-4e26-8a38-03e0a253fe1b)
+```
+에셋 스토어에서 애니메이션을 간단하게 할 수 있는 DOTween 이라는 플러그인을 임포트하여
+UI에 애니메이션을 추가할 수 있습니다. 임포트하고 Setup DOTween 까지 하면 DOTween을 사용할 수
+있게 됩니다.
+```
