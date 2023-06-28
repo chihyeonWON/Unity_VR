@@ -609,3 +609,14 @@ CanvasGroup 컴포넌트의 alpha 프로퍼티 값을 0으로 설정합니다.
 
 실행하여 GameOver 문자가 떠오르고 사라지는 것을 확인할 수 있습니다.
 ```
+## DOTween을 사용하여 GameStart에 애니메이션 적용
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/2c0ed736-9473-47b5-a910-d49fbf8aed18)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/aff1d04d-331c-4e68-a805-27b4a68fed44)
+```
+화면 오른쪽에서 슬라이드인 하고 왼쪽으로 슬라이드아웃 하는 애니메이션을 주는
+SlideInOut Script를 작성하고 GameStart Text Ui에 이 컴포넌트를 적용합니다.
+
+Rect Transform 컴포넌트의 PosX 프로퍼티 값을 1400으로 설정합니다.
+
+실행하여 GameStart TEXT UI가 오른쪽 끝에서 출현해 왼쪽 끝으로 사라지는 것을 확인할 수 있습니다.
+```
