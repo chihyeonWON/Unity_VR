@@ -600,3 +600,12 @@ ZomBear 프리팹에 EnemyAnimator Controller를 Animator 컴포넌트의 Contro
 UI에 애니메이션을 추가할 수 있습니다. 임포트하고 Setup DOTween 까지 하면 DOTween을 사용할 수
 있게 됩니다.
 ```
+## DOTween 을 사용하여 GameOver를 페이드로 표시
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/4987f19b-570a-4d81-a484-943f7628395f)    
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/37a2b747-aaff-44fa-a23a-52546b29fe66)
+```
+CanvasGroupFade 스크립트를 작성하고 하이어라키의 GameOver 게임 오브젝트에 추가한 후
+CanvasGroup 컴포넌트의 alpha 프로퍼티 값을 0으로 설정합니다.
+
+실행하여 GameOver 문자가 떠오르고 사라지는 것을 확인할 수 있습니다.
+```
