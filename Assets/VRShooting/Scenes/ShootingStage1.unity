@@ -851,6 +851,8 @@ GameObject:
   - component: {fileID: 522588820}
   - component: {fileID: 522588822}
   - component: {fileID: 522588821}
+  - component: {fileID: 522588824}
+  - component: {fileID: 522588823}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -920,6 +922,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522588819}
   m_CullTransparentMesh: 1
+--- !u!114 &522588823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522588819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664eb60413ca6034db4295297046f2de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &522588824
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522588819}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &570855456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2126,6 +2152,7 @@ GameObject:
   - component: {fileID: 2047612115}
   - component: {fileID: 2047612117}
   - component: {fileID: 2047612116}
+  - component: {fileID: 2047612118}
   m_Layer: 5
   m_Name: GameStart
   m_TagString: Untagged
@@ -2150,7 +2177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 80}
+  m_AnchoredPosition: {x: 1400, y: 80}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2047612116
@@ -2195,6 +2222,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047612114}
   m_CullTransparentMesh: 1
+--- !u!114 &2047612118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047612114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f1875f3467dbb4c80f51150258e2b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2096053040 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3563377300602871276, guid: 5633b4a08b098ed4ab232cc31811f8c8, type: 3}
