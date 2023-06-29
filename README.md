@@ -620,3 +620,24 @@ Rect Transform 컴포넌트의 PosX 프로퍼티 값을 1400으로 설정합니�
 
 실행하여 GameStart TEXT UI가 오른쪽 끝에서 출현해 왼쪽 끝으로 사라지는 것을 확인할 수 있습니다.
 ```
+## 타이틀 화면 생성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/9da565aa-ad2b-4133-a815-e7fdc850a183)
+
+#### Canvas의 컴포넌트 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/abc95065-7f06-4d06-a413-b27f400de509)
+
+#### Text의 컴포넌트 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/9ca49111-e45b-42e4-82e6-d2274c3b6143)
+
+#### StartButton의 컴포넌트 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/a77cd2ec-ab38-4c29-ad4e-b814416bfdfa)
+
+#### QuitButton의 컴포넌트 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/69328f83-3996-496d-8d6b-891e2c3ddb89)
+
+```
+File -> New Scene을 선택하고 새로운 씬으로 전환합니다.
+씬의 이름은 Title로 하고 필요한 UI 들을 배치합니다.
+
+Canvas의 자식 요소로 Text와 Button을 생성합니
+```
