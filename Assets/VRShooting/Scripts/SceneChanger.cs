@@ -5,12 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public void LoadScene(string sceneName)
+    {
+        // ì§€ì •ëœ ì”¬ì„ ë¡œë“œí•œë‹¤
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void QuitGame()
+    {
+        // ì• í”Œë¦¬ì¼€ì´ì…˜ ì¢…ë£Œ
+        Application.Quit();
+    }
+
     public void ReloadScene()
     {
-        // ÇöÀçÀÇ ¾ÀÀ» Ãëµæ
+        // í˜„ì¬ì˜ ì”¬ì„ ì·¨ë“
         var scene = SceneManager.GetActiveScene();
 
-        // ÇöÀçÀÇ ¾ÀÀ» ´Ù½Ã ·ÎµåÇÑ´Ù.
+        // í˜„ì¬ì˜ ì”¬ì„ ë‹¤ì‹œ ë¡œë“œí•œë‹¤
         SceneManager.LoadScene(scene.name);
     }
 }
