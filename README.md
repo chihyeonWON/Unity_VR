@@ -639,5 +639,13 @@ Rect Transform 컴포넌트의 PosX 프로퍼티 값을 1400으로 설정합니�
 File -> New Scene을 선택하고 새로운 씬으로 전환합니다.
 씬의 이름은 Title로 하고 필요한 UI 들을 배치합니다.
 
-Canvas의 자식 요소로 Text와 Button을 생성합니
+Canvas의 자식 요소로 Text와 Button을 생성합니다
+```
+
+## 스테이지 선택 화면 생성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/59549eca-10b8-40b3-a572-2d7fcb33a6e2)
+```
+새로운 씬을 생성하고 Text와 버튼 UI를 배치합니다.
+
+버튼 하나는 스테이지 선택 버튼, 나머지 하나는 Title 씬으로 돌아가는 기능을 합니다.
 ```
