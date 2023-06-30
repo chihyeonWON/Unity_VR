@@ -601,5 +601,43 @@ UI에 애니메이션을 추가할 수 있습니다. 임포트하고 Setup DOTwe
 있게 됩니다.
 ```
 ## DOTween 을 사용하여 GameOver를 페이드로 표시
-![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/4987f19b-570a-4d81다
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/4987f19b-570a-4d81-a484-943f7628395f)    
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/37a2b747-aaff-44fa-a23a-52546b29fe66)
+```
+CanvasGroupFade 스크립트를 작성하고 하이어라키의 GameOver 게임 오브젝트에 추가한 후
+CanvasGroup 컴포넌트의 alpha 프로퍼티 값을 0으로 설정합니다.
+
+실행하여 GameOver 문자가 떠오르고 사라지는 것을 확인할 수 있습니다.
+```
+## DOTween을 사용하여 GameStart에 애니메이션 적용
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/2c0ed736-9473-47b5-a910-d49fbf8aed18)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/aff1d04d-331c-4e68-a805-27b4a68fed44)
+```
+화면 오른쪽에서 슬라이드인 하고 왼쪽으로 슬라이드아웃 하는 애니메이션을 주는
+SlideInOut Script를 작성하고 GameStart Text Ui에 이 컴포넌트를 적용합니다.
+
+Rect Transform 컴포넌트의 PosX 프로퍼티 값을 1400으로 설정합니다.
+
+실행하여 GameStart TEXT UI가 오른쪽 끝에서 출현해 왼쪽 끝으로 사라지는 것을 확인할 수 있습니다.
+```
+## 타이틀 화면 생성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/9da565aa-ad2b-4133-a815-e7fdc850a183)
+
+#### Canvas의 컴포넌트 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/abc95065-7f06-4d06-a413-b27f400de509)
+
+#### Text의 컴포넌트 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/9ca49111-e45b-42e4-82e6-d2274c3b6143)
+
+#### StartButton의 컴포넌트 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/a77cd2ec-ab38-4c29-ad4e-b814416bfdfa)
+
+#### QuitButton의 컴포넌트 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/69328f83-3996-496d-8d6b-891e2c3ddb89)
+
+```
+File -> New Scene을 선택하고 새로운 씬으로 전환합니다.
+씬의 이름은 Title로 하고 필요한 UI 들을 배치합니다.
+
+Canvas의 자식 요소로 Text와 Button을 생성합니
 ```
