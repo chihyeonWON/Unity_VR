@@ -656,3 +656,13 @@ Canvas의 자식 요소로 Text와 Button을 생성합니다
 ShootingStage1 씬의 Result 결과 표시 화면의 Retry 버튼을 복제하여 End 버튼을 생성하고
 버튼의 이벤트를 Reload에서 LoadScene으로 수정합니다.
 ```
+
+## 씬을 등록
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/9ded06b1-e615-4030-b201-2ee1d3ebf9ba)
+```
+지금까지 생성한 Title, SelectStage, ShootingStage1 세 개의 씬을 Build Settings에 등록합니다.
+
+씬의 등록 순서를 1: Title 2: SelectStage 3: ShootingStage1 으로 하고 실행하여 버튼을 눌러서
+
+씬이 개발 의도한대로 전환되는 것을 확인할 수 있습니다.
+```
