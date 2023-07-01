@@ -649,3 +649,10 @@ Canvas의 자식 요소로 Text와 Button을 생성합니다
 
 버튼 하나는 스테이지 선택 버튼, 나머지 하나는 Title 씬으로 돌아가는 기능을 합니다.
 ```
+
+## 스테이지 종료 버튼 생성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/49731358-a4f3-4204-9d92-64ad5f86c782)
+```
+ShootingStage1 씬의 Result 결과 표시 화면의 Retry 버튼을 복제하여 End 버튼을 생성하고
+버튼의 이벤트를 Reload에서 LoadScene으로 수정합니다.
+```
