@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/VRShooting/Scenes/Title.unity
+    guid: c2ba9c35795dbb34fb426d24a42a03dc
+  - enabled: 1
+    path: Assets/VRShooting/Scenes/SelectStage.unity
+    guid: 745fc833ea5adb443944b260932e4e0f
+  - enabled: 1
+    path: Assets/VRShooting/Scenes/ShootingStage1.unity
+    guid: cb1761177c8ac417a856f390bfdf100f
   m_configObjects: {}
