@@ -666,3 +666,16 @@ ShootingStage1 씬의 Result 결과 표시 화면의 Retry 버튼을 복제하�
 
 씬이 개발 의도한대로 전환되는 것을 확인할 수 있습니다.
 ```
+
+## 적의 종류를 늘리기
+
+#### Hellephant 프리팹의 Enemy 컴포넌트 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/37671f95-d21a-4e46-b976-cf511e6552df)
+```
+ZomBear 프리팹을 작성했던 것처럼 Hellephant 프리팹을 작성하여 적의 종류를 늘려보았습니다.
+
+Hellephant의 Layer, SphereCollider, Rigidbody, Audio Source 컴포넌트를 적용하고 파라미터를 설정합니다.
+Animator 컴포넌트의 Controller 프로퍼티에 HellephantAnimator OvrrideController 를 설정합니다.
+Enemy 컴포넌트를 적용하고 설정합니다. 하이어라키 창의 Hellephant를 오브젝트 창의 Prefab에 드래그 앤 드롭하여
+프리팹화합니다.
+```
