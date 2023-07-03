@@ -679,3 +679,27 @@ Animator 컴포넌트의 Controller 프로퍼티에 HellephantAnimator OvrrideCo
 Enemy 컴포넌트를 적용하고 설정합니다. 하이어라키 창의 Hellephant를 오브젝트 창의 Prefab에 드래그 앤 드롭하여
 프리팹화합니다.
 ```
+
+## 적의 체력을 설정할 수 있도록 Enemy C# Script 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/2cc6ebe3-701b-45de-9b91-6c403187d71b)
+```
+적의 체력을 에디터에서 설정할 수 있도록 hp 변수를 추가합니다.
+```
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/e6aa8111-7b0d-48d4-bea5-e2b6247b2294)
+```
+OnHitBullet 함수에서는 총을 맞을 때마다 체력을 감산해서 체력이 0 이하가 되면 쓰러지는 처리가 이루어지도록
+수정합니다. Hellephant 인스펙터 창의 Enemy 컴포넌트의 hp를 5로 설정하면 총을 맞아도 체력이 있는 한 쓰러지지 않게 됩니다.
+```
+
+## 랜덤으로 적이 출현되도록 Enemy Spawner C# Script 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/66c2d791-c428-4415-8479-c5ebef444fa1)    
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/b68207c6-e799-4c3f-a9eb-b826eca4b44f)
+```
+적의 프리팹을 배열로 변경해서 에디터에서 등록할 수 있게 하고 Spawn 메서드를 그 배열 중에서 하나를 랜덤으로
+선택하도록 변경하여 EnemySpawner 컴포넌트에 등록된 적의 프리팹 안에서 적 하나가 랜덤으로 나오게 되며
+출현하는 적을 설정할 수 있습니다.
+
+실행하여 Zombear, Hellephant 두 개의 적이 랜덤하여 생성되는 것을 알 수 있습니다.
+
+또 Hellephant의 hp를 5로 설정하였기에 총으로 Hellephant를 5번 맞춰야 Hellephant가 사라지는 것을 확인할 수 있습니다.
+```
