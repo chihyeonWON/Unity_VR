@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] int point = 1;
     Score score;
 
+    [SerializeField] int hp = 1; // 적의 히트 포인트
+
     void Start()
     {
         // AudioSource 컴포넌트를 취득해 둔다.
@@ -38,8 +40,15 @@ public class Enemy : MonoBehaviour
         // 총알 명중 시의 소리를 재생
         audioSource.PlayOneShot(hitClip);
 
-        // 쓰러졌을 때의 처리
-        GoDown();
+        // HP 감산
+        --hp;
+
+        // HP가 0이 되면 쓰러짐
+        if(hp <= 0)
+        {
+            // 쓰러졌을 때의 처리
+            GoDown();
+        }
     }
 
     void GoDown()
