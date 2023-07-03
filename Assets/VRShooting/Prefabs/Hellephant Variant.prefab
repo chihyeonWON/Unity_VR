@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: b77f122f451a2394898a24191c26107c, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 915836dc0acd2ea428d57a2f8b317393, type: 2}
+      objectReference: {fileID: 9100000, guid: df4b76944a2803b4ebffae6643f75262, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -109,7 +109,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -255,6 +255,7 @@ MonoBehaviour:
   enemyCollider: {fileID: 6515911269093199173}
   enemyRenderer: {fileID: 7311289840295323487}
   point: 10
+  hp: 5
 --- !u!137 &7311289840295323487 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 13700000, guid: b77f122f451a2394898a24191c26107c, type: 3}
