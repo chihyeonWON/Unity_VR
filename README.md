@@ -709,3 +709,23 @@ hp : 5 , 처치 시 10만큼의 Point 획득 (ZomBear는 hp 1, Point 1)
 
 또 Hellephant의 hp를 5로 설정하였기에 총으로 Hellephant를 5번 맞춰야 Hellephant가 사라지는 것을 확인할 수 있습니다.
 ```
+## 새로운 적 ZomBunny 몹 추가 
+
+#### navigation 설정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/b544292d-56c9-4d90-ae99-f0a89fef7425)     
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/82387830-1ece-465a-9443-c98f7ad00b6a)     
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/6f92ff40-a6d0-4903-ade5-08f46f4daeba)      
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/87595a8c-a933-479a-85ef-7afd7bfcab64)     
+
+
+```
+hellephant와 같이 capsule collider, rigidbody, audio source, enemy 컴포넌트를 적용하고 프로퍼티를 설정합니다.
+
+Zombunny에게는 내비게이션 기능을 이용하여 걸을 수 있도록 설정합니다.
+
+window -> ai -> navigation을 선택하여 네비게이션 화면을 열고 Agents 탭을 설정합니다.
+bake탭에서 bake를 실행하고 Scene Filter를 All을 선택하여 하이어라키 창을 되돌립니다.
+
+nav mesh agent 컴포넌트 적용하고 speed의 프로퍼티의 값을 1로 설정합니다.
+
+```
