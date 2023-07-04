@@ -251,6 +251,18 @@ PrefabInstance:
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 6534500586124780179, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6534500586124780179, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1309057075335144202, guid: 17b72c52844df4844abf0d1102c8d8cc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -396,6 +408,18 @@ PrefabInstance:
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 6534500586124780179, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6534500586124780179, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1309057075335144202, guid: 17b72c52844df4844abf0d1102c8d8cc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1865,6 +1889,10 @@ PrefabInstance:
       value: EnemySpawner
       objectReference: {fileID: 0}
     - target: {fileID: 4508687170806090863, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508687170806090863, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -1872,6 +1900,18 @@ PrefabInstance:
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 6534500586124780179, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6534500586124780179, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1309057075335144202, guid: 17b72c52844df4844abf0d1102c8d8cc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2030,6 +2070,18 @@ PrefabInstance:
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 6534500586124780179, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6534500586124780179, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1309057075335144202, guid: 17b72c52844df4844abf0d1102c8d8cc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2281,7 +2333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d352eb9b3e907e4dbd5c74bff52aeeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTime: 20
+  gameTime: 30
 --- !u!114 &1860281393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2578,6 +2630,18 @@ PrefabInstance:
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 6534500586124780179, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6534500586124780179, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
+    - target: {fileID: 6896661599799762695, guid: 8845ccd0549063840baaa6e522778ec9, type: 3}
+      propertyPath: enemyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1309057075335144202, guid: 17b72c52844df4844abf0d1102c8d8cc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
