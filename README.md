@@ -716,8 +716,6 @@ hp : 5 , 처치 시 10만큼의 Point 획득 (ZomBear는 hp 1, Point 1)
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/82387830-1ece-465a-9443-c98f7ad00b6a)     
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/6f92ff40-a6d0-4903-ade5-08f46f4daeba)      
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/87595a8c-a933-479a-85ef-7afd7bfcab64)     
-
-
 ```
 hellephant와 같이 capsule collider, rigidbody, audio source, enemy 컴포넌트를 적용하고 프로퍼티를 설정합니다.
 
@@ -727,5 +725,20 @@ window -> ai -> navigation을 선택하여 네비게이션 화면을 열고 Agen
 bake탭에서 bake를 실행하고 Scene Filter를 All을 선택하여 하이어라키 창을 되돌립니다.
 
 nav mesh agent 컴포넌트 적용하고 speed의 프로퍼티의 값을 1로 설정합니다.
+```
 
+## ZomBunny의 이동 장소를 결정하는 MoveAgent C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/46341314-a33e-4fdf-a334-977c83613d93)
+```
+Start 함수에서 NavMeshAgent 컴포넌트를 취득해 agent 변수에 저장하고, GotoNextPoint 함수를 호출하여
+최초의 목적지를 결정합니다.
+
+Update 함수에서 NavMeshAgent를 갖고 있는 오브젝트가 목적지까지의 거리가 0.5m 이내가 되면 다음 이동 장소가 되는
+새로운 목적지를 결정합니다.
+
+GotoNextPoint 함수에서는 Planks 게임 오브젝트의 크기인 X좌표(-20.0, 20.0)와 Z좌표(-20.0, 20.0)의 범위에서
+무작위로 목적지를 정하고 agent.SetDestination 함수에서 NavMeshAgent 컴포넌트의 새로운 목적지를 설정하여
+이동 경로를 재계산합니다.
+
+Zombunny 오브젝트에 작성한 MoveAgent 컴포넌트를 적용하고 실행하여 Zombunny가 맵에 돌아다니는 것을 확인할 수 있습니다.
 ```
