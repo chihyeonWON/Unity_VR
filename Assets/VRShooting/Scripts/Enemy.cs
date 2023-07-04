@@ -5,61 +5,78 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] AudioClip spawnClip; // ÃâÇö ½ÃÀÇ AudioClip
-    [SerializeField] AudioClip hitClip; // ÃÑ¾Ë ¸íÁß ½ÃÀÇ AudioClip
+    [SerializeField] AudioClip spawnClip; // ì¶œí˜„ ì‹œì˜ AudioClip
+    [SerializeField] AudioClip hitClip;   // ì´ì•Œ ëª…ì¤‘ ì‹œì˜ AudioClip
 
-    // ¾²·¯¶ß·ÈÀ» ¶§ ¹«È¿È­ÇÏ±â À§ÇØ¼­ Äİ¶óÀÌ´õ¸¦ °®°í ÀÖ´Â´Ù
-    [SerializeField] Collider enemyCollider; // Äİ¶óÀÌ´õ
-    [SerializeField] Renderer enemyRenderer; // ·»´õ·¯
+    // ì“°ëŸ¬ì¡Œì„ ë•Œì— ë¬´íš¨í™”í•˜ê¸° ìœ„í•´ì„œ ì½œë¼ì´ë”ì™€ ë Œë”ëŸ¬ë¥¼ ê°–ê³  ìˆëŠ”ë‹¤
+    [SerializeField] Collider enemyCollider; // ì½œë¼ì´ë”
+    [SerializeField] Renderer enemyRenderer; // ë Œë”ëŸ¬
 
-    AudioSource audioSource; // Àç»ı¿¡ »ç¿ëÇÏ´Â AudioSource
+    AudioSource audioSource;            // ì¬ìƒì— ì‚¬ìš©í•˜ëŠ” AudioSource
 
-    [SerializeField] int point = 1;
-    Score score;
+    [SerializeField] int point = 1;     // ì“°ëŸ¬ì¡Œì„ ë•Œì˜ ì ìˆ˜ í¬ì¸íŠ¸
+    Score score;                        // ì ìˆ˜
 
-    [SerializeField] int hp = 1; // ÀûÀÇ È÷Æ® Æ÷ÀÎÆ®
+    [SerializeField] int hp = 1;        // ì ì˜ íˆíŠ¸ í¬ì¸íŠ¸
+
+    [SerializeField] GameObject popupTextPrefab;    // ë“ì  í‘œì‹œìš© í”„ë¦¬íŒ¹
 
     void Start()
     {
-        // AudioSource ÄÄÆ÷³ÍÆ®¸¦ ÃëµæÇØ µĞ´Ù.
+        // AudioSource ì»´í¬ë„ŒíŠ¸ë¥¼ ì·¨ë“í•´ ë‘”ë‹¤
         audioSource = GetComponent<AudioSource>();
 
-        // ÃâÇö ½ÃÀÇ ¼Ò¸®¸¦ Àç»ı
+        // ì¶œí˜„ ì‹œì˜ ì†Œë¦¬ë¥¼ ì¬ìƒ
         audioSource.PlayOneShot(spawnClip);
 
-        // °ÔÀÓ ¿ÀºêÁ§Æ®¸¦ °Ë»ö
+        // ê²Œì„ ì˜¤ë¸Œì íŠ¸ë¥¼ ê²€ìƒ‰
         var gameObj = GameObject.FindWithTag("Score");
 
-        // gameObj¿¡ Æ÷ÇÔµÇ´Â Score ÄÄÆ÷³ÍÆ®¸¦ Ãëµæ
+        // gameObjì— í¬í•¨ë˜ëŠ” Score ì»´í¬ë„ŒíŠ¸ë¥¼ ì·¨ë“
         score = gameObj.GetComponent<Score>();
     }
 
-    // OnHitMessage ¸Ş½ÃÁö·ÎºÎÅÍ È£ÃâµÇ´Â °ÍÀ» »óÁ¤
+    // OnHitBullet ë©”ì‹œì§€ë¡œë¶€í„° í˜¸ì¶œë˜ëŠ” ê²ƒì„ ìƒì •
     void OnHitBullet()
     {
-        // ÃÑ¾Ë ¸íÁß ½ÃÀÇ ¼Ò¸®¸¦ Àç»ı
+        // ì´ì•Œ ëª…ì¤‘ ì‹œì˜ ì†Œë¦¬ë¥¼ ì¬ìƒ
         audioSource.PlayOneShot(hitClip);
 
-        // HP °¨»ê
+        // HP ê°ì‚°
         --hp;
 
-        // HP°¡ 0ÀÌ µÇ¸é ¾²·¯Áü
-        if(hp <= 0)
+        // HPê°€ 0ì´ ë˜ë©´ ì“°ëŸ¬ì§
+        if (hp <= 0)
         {
-            // ¾²·¯Á³À» ¶§ÀÇ Ã³¸®
+            // ì“°ëŸ¬ì¡Œì„ ë•Œì˜ ì²˜ë¦¬
             GoDown();
         }
     }
 
+    // ì“°ëŸ¬ì¡Œì„ ë•Œì˜ ì²˜ë¦¬
     void GoDown()
     {
-        // Á¡¼ö¸¦ ´õÇÔ
+        // ì ìˆ˜ë¥¼ ê°€ì‚°
         score.AddScore(point);
 
-        // Ãæµ¹ ÆÇÁ¤°ú Ç¥½Ã¸¦ Áö¿î´Ù
-        enemyCollider.enabled = false;
+        // íŒì—… í…ìŠ¤íŠ¸ì˜ ì‘ì„±
+        CreatePopupText();
 
-        // ÀÚ½ÅÀÇ °ÔÀÓ ¿ÀºêÁ§Æ®¸¦ ÀÏÁ¤ ½Ã°£ ÈÄ¿¡ Á¦°Å
-        Destroy(gameObject, 0.4f);
+        // ì¶©ëŒ íŒì •ê³¼ í‘œì‹œë¥¼ ì§€ìš´ë‹¤
+        enemyCollider.enabled = false;
+        enemyRenderer.enabled = false;
+
+        // ìì‹ ì˜ ê²Œì„ ì˜¤ë¸Œì íŠ¸ë¥¼ ì¼ì • ì‹œê°„ í›„ì— ì œê±°
+        Destroy(gameObject, 1f);
+    }
+
+    // íŒì—… í…ìŠ¤íŠ¸ì˜ ì‘ì„±
+    void CreatePopupText()
+    {
+        // íŒì—… í…ìŠ¤íŠ¸ì˜ ì¸ìŠ¤í„´ìŠ¤ ì‘ì„±
+        var text = Instantiate(popupTextPrefab, transform.position, Quaternion.identity);
+
+        // íŒì—… í…ìŠ¤íŠ¸ì˜ í…ìŠ¤íŠ¸ ë³€ê²½
+        text.GetComponent<TextMesh>().text = string.Format("+{0}", point);
     }
 }
