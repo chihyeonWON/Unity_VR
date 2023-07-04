@@ -91,8 +91,13 @@ PrefabInstance:
       addedObject: {fileID: 6435562567521367359}
     - targetCorrespondingSourceObject: {fileID: 100074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6534500586124780179}
+      addedObject: {fileID: 6343362000190708448}
   m_SourcePrefab: {fileID: 100100000, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
+--- !u!137 &5512192289469596059 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700000, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
+  m_PrefabInstance: {fileID: 5512192289472678459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5512192289472711889 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
@@ -244,7 +249,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6534500586124780179
+--- !u!114 &6343362000190708448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,11 +258,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5512192289472711889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1326e435a68ba864f8541491c79e22ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e2e8af0533174bdba087ab154486516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
   hitClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
   enemyCollider: {fileID: 8246366031642305088}
-  enemyRenderer: {fileID: 0}
+  enemyRenderer: {fileID: 5512192289469596059}
   point: 1
+  hp: 1
+  popupTextPrefab: {fileID: 2706514512224007559, guid: 104f5cd8b689bb64da7f94407c3be8d7, type: 3}
