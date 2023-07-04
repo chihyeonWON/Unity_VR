@@ -1,4 +1,4 @@
-![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/a5a46cd6-449d-40d3-b4e3-a42831dc85c3)# Unity_Project
+# Unity_Project
 Unity_Project on 2023 Summer Vacation.
 
 ## Unity 설치하기
