@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] Enemy[] enemyPrefabs; // ÃâÇö½ÃÅ°·Á´Â ÀûÀÇ ÇÁ¸®ÆÕ
+    [SerializeField] Enemy[] enemyPrefabs; // ì¶œí˜„ì‹œí‚¤ëŠ” ì ì˜ í”„ë¦¬íŒ¹
+    Enemy enemy; // ì¶œí˜„ ì¤‘ì¸ ì ì„ ë³´ìœ 
 
-    Enemy enemy; // ÃâÇö ÁßÀÎ ÀûÀ» º¸À¯
-
+    // ì ì„ ë°œìƒì‹œí‚¨ë‹¤
     public void Spawn()
     {
-        // ÃâÇö ÁßÀÌ ¾Æ´Ï¸é ÀûÀ» ÃâÇö½ÃÅ²´Ù.
-        if(enemy == null)
+        // ì¶œí˜„ ì¤‘ì´ ì•„ë‹ˆë©´ ì ì„ ì¶œí˜„ì‹œí‚¨ë‹¤
+        if (enemy == null)
         {
-            // µî·ÏµÇ¾î ÀÖ´Â ÀûÀÇ ÇÁ¸®ÆÕ¿¡¼­ ÇÏ³ª¸¦ ·£´ıÀ¸·Î ¼±ÅÃ
             var index = Random.Range(0, enemyPrefabs.Length);
 
-            // ¼±ÅÃÇÑ ÀûÀÇ ÀÎ½ºÅÏ½º¸¦ ÀÛ¼º
+            // ì„ íƒí•œ ì ì˜ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì‘ì„±
             enemy = Instantiate(enemyPrefabs[index], transform.position, transform.rotation);
         }
     }
