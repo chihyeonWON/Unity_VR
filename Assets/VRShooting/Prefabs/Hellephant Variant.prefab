@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b77f122f451a2394898a24191c26107c, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b77f122f451a2394898a24191c26107c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -87,7 +87,7 @@ PrefabInstance:
       addedObject: {fileID: 6045737100695878201}
     - targetCorrespondingSourceObject: {fileID: 100004, guid: b77f122f451a2394898a24191c26107c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1309057075335144202}
+      addedObject: {fileID: 8758582799964464679}
   m_SourcePrefab: {fileID: 100100000, guid: b77f122f451a2394898a24191c26107c, type: 3}
 --- !u!1 &7311289840290048603 stripped
 GameObject:
@@ -238,7 +238,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1309057075335144202
+--- !u!114 &8758582799964464679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7311289840290048603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1326e435a68ba864f8541491c79e22ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e2e8af0533174bdba087ab154486516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnClip: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
@@ -256,6 +256,7 @@ MonoBehaviour:
   enemyRenderer: {fileID: 7311289840295323487}
   point: 10
   hp: 5
+  popupTextPrefab: {fileID: 2706514512224007559, guid: 104f5cd8b689bb64da7f94407c3be8d7, type: 3}
 --- !u!137 &7311289840295323487 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 13700000, guid: b77f122f451a2394898a24191c26107c, type: 3}
