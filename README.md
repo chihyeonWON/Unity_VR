@@ -1,4 +1,4 @@
-# Unity_Project
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/a5a46cd6-449d-40d3-b4e3-a42831dc85c3)# Unity_Project
 Unity_Project on 2023 Summer Vacation.
 
 ## Unity 설치하기
@@ -741,4 +741,26 @@ GotoNextPoint 함수에서는 Planks 게임 오브젝트의 크기인 X좌표(-2
 이동 경로를 재계산합니다.
 
 Zombunny 오브젝트에 작성한 MoveAgent 컴포넌트를 적용하고 실행하여 Zombunny가 맵에 돌아다니는 것을 확인할 수 있습니다.
+```
+
+## 스테이지를 늘리기
+
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/cda6b4fa-97de-479b-8111-8f6bba2d344f)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/a0e1154b-e865-40b0-a2b7-ba84d2219c88)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/4c6c8ef6-1825-49e6-8f82-417210035244)
+```
+Stage 1 : 'ZomBear'를 출현시킨다.
+Stage 2 : 'ZomBear', 'Hellephant'를 랜덤으로 출현시킨다.
+Stage 3 : 'ZomBear', 'Hellephant', 'ZomBunny'를 랜덤으로 출현시킨다.
+
+모든 스테이지에 공통적으로 사용되는 오브젝트인 Main Camera, Canvas, Floor 프리팹화합니다.
+
+ShootingStage3 복사해서 ShootingStage2를 생성하고 EnemySpawner들의 Size프로퍼티를 2로 설정,
+다시 ShootingStage2를 복사해서 ShootingStage1을 생성하고 EnemySpawner들의 Size 프로퍼티를 1로 설정합니다.
+
+SelectStage scene에서 stage1 버튼을 복사하여 stage2, stage3 버튼을 생성하고 on Click 이벤트 프로퍼티의
+Scene.load(string)의 프로퍼티 값 ShootingStage{1, 2, 3}으로 수정합니다.
+
+Build Setting 설정 창에 ShootingStage2와 ShootingStage3을 추가하고 실행하여 스테이지가 추가된 것을 확인할 수 있습니다.
+
 ```
