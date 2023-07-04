@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1199876274734103516
 Transform:
   m_ObjectHideFlags: 0
@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8d8778eb32b72469dc9924b7d7c35f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: -3328353506151898787, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
+  enemyPrefabs:
+  - {fileID: 6534500586124780179, guid: a47c56e52d03db34fa03996afe39969f, type: 3}
