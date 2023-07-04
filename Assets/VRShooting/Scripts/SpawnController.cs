@@ -4,32 +4,27 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
-    [SerializeField] float spawnInterval = 3f; // Àû ÃâÇö °£°İ
+    [SerializeField] float spawnInterval = 3f; // ì  ì¶œí˜„ ê°„
 
-    EnemySpawner[] spawners; // EnemySpawnerÀÇ ¸®½ºÆ®
-    float timer = 0f; // ÃâÇö ½Ã°£ ÆÇÁ¤¿ëÀÇ Å¸ÀÌ¸Ó º¯¼ö
+    EnemySpawner[] spawners; // EnemySpawnerì˜ ë¦¬ìŠ¤íŠ¸
+    float timer = 0f;        // ì¶œí˜„ ì‹œê°„ íŒì •ìš©ì˜ íƒ€ì´ë¨¸ ë³€ìˆ˜
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
-        // ÀÚ½Ä ¿ÀºêÁ§Æ®¿¡ Á¸ÀçÇÏ´Â EnemySpawner ¸®½ºÆ®¸¦ Ãëµæ
+        // ìì‹ ì˜¤ë¸Œì íŠ¸ì— ì¡´ì¬í•˜ëŠ” EnemySpawner ë¦¬ìŠ¤íŠ¸ë¥¼ ì·¨ë“
         spawners = GetComponentsInChildren<EnemySpawner>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Å¸ÀÌ¸Ó °»½Å
         timer += Time.deltaTime;
 
-        // ÃâÇö °£°İÀÇ ÆÇÁ¤
         if(spawnInterval < timer)
         {
-            // ·£´ıÀ¸·Î EnemySpawner¸¦ ¼±ÅÃÇØ¼­ ÀûÀ» ÃâÇö½ÃÅ²´Ù
             var index = Random.Range(0, spawners.Length);
             spawners[index].Spawn();
 
-            // Å¸ÀÌ¸Ó ¸®¼Â
             timer = 0f;
         }
     }
