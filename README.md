@@ -692,6 +692,12 @@ OnHitBullet 함수에서는 총을 맞을 때마다 체력을 감산해서 체�
 ```
 
 ## 랜덤으로 적이 출현되도록 Enemy Spawner C# Script 수정
+
+#### 새로운 적 Hellephant 몹 추가
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/3cae413e-2f43-478d-9053-28ddf52f16f7)
+```
+hp : 5 , 처치 시 10만큼의 Point 획득 (ZomBear는 hp 1, Point 1)
+```
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/66c2d791-c428-4415-8479-c5ebef444fa1)    
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/b68207c6-e799-4c3f-a9eb-b826eca4b44f)
 ```
