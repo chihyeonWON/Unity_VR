@@ -762,5 +762,20 @@ SelectStage scene에서 stage1 버튼을 복사하여 stage2, stage3 버튼을 �
 Scene.load(string)의 프로퍼티 값 ShootingStage{1, 2, 3}으로 수정합니다.
 
 Build Setting 설정 창에 ShootingStage2와 ShootingStage3을 추가하고 실행하여 스테이지가 추가된 것을 확인할 수 있습니다.
+```
 
+## 배경에 벽 추가
+
+#### Floor의 Wall 추가
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/cf187f48-9403-4140-ac5b-315bbe24d408)
+
+#### Floor의 Wall(1) 추가
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/cd1766a8-252a-4b81-8c0e-88752c78ed40)
+
+```
+ShootingStage1의 하이어라키 창의 Floor의 자식요소로 Models/Environment/Wall을 2회 드래그 앤 드롭하여 설정합니다.
+
+Wall(1)의 PosX -: 48, PosY:0, PosZ: -48, RotationX : 0 RotationY : 180 RotationZ : 0 으로 설정합니다.
+
+그 후 Floor의 Overrides 창에서 Apply all을 눌러서 ShootingStage2와 ShootingStage3 Scene의 Floor Wall을 추가합니다.
 ```
