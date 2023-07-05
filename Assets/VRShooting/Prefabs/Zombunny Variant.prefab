@@ -86,10 +86,10 @@ PrefabInstance:
       addedObject: {fileID: 2761819648429408249}
     - targetCorrespondingSourceObject: {fileID: 100074, guid: be66986effd141b4992d2d78be127139, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -7255414746668754378}
+      addedObject: {fileID: -4112004147652208229}
     - targetCorrespondingSourceObject: {fileID: 100074, guid: be66986effd141b4992d2d78be127139, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7406212540784561881}
+      addedObject: {fileID: -2960792550013797915}
   m_SourcePrefab: {fileID: 100100000, guid: be66986effd141b4992d2d78be127139, type: 3}
 --- !u!137 &2965466554866337036 stripped
 SkinnedMeshRenderer:
@@ -266,7 +266,7 @@ MonoBehaviour:
   point: 4
   hp: 2
   popupTextPrefab: {fileID: 2706514512224007559, guid: 104f5cd8b689bb64da7f94407c3be8d7, type: 3}
---- !u!195 &-7255414746668754378
+--- !u!195 &-4112004147652208229
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -288,7 +288,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7406212540784561881
+--- !u!114 &-2960792550013797915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
