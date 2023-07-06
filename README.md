@@ -825,5 +825,32 @@ leverRange보다 짧으면 inputPos를 바로 주고, 길면 inputPos를 정규�
 레버 이미지가 조이스틱 영역을 크게 벗어나지 않는 적절한 영역을 확인합니다. 지금은 100 정도가 적당해 보입니다.
 VirtualJoystick 컴포넌트가 부착되어 있는 Joystick 게임 오브젝트를 선택하고 인스펙터 뷰에서 Lever Range 프로퍼티를 34정로 설정합니다.
 
-게임을 플레이시키고 가상 조이스틱을 움직여보면 드래그를 조이스틱 밖으로 끌어도 조이스틱의 레버가 조이스틱 영역을 벗어나지 않는 것을 볼 수 있습습니다.
+게임을 플레이시키고 가상 조이스틱을 움직여보면 드래그를 조이스틱 밖으로 끌어도 조이스틱의 레버가 조이스틱 영역을 벗어나지 않는 것을 볼 수 있습니다.
+```
+## 조작 기능을 추가하도록 VitualJoystick C# Script 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/3712f919-34a5-4b7b-b6c9-625f540adc8b)     
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/76092965-7941-4108-950b-df3385dfb759)   
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/1dbedc2b-ca35-4dce-892c-c1aea69a3f93)    
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/ee24571b-559c-4e44-ac79-aa0c847bb3a1)
+```
+조작 기능을 추가할 차례입니다.
+이번에는 Vector2로 inputVector 변수와 bool 타입으로 isInput 변수를 추가합니다.
+그리고 OnBeginDrag와 OnDrag 이벤트 함수에서 inputVector 값을 넣어줄 차례인데,
+두 이벤트 모두 동작하고 있는 함수의 내용이 완전히 동일하다는 것을 알 수 있습니다.
+그렇기 때문에 ControlJoystickLever라는 함수를 새로 만들고 두 함수의 내용을 복사해서 붙여넣어 줍니다.
+
+그 다음에는 ControlJoystickLever 함수에서 clampedDir를 leverRange로 나누어서 inputVector에 넣어줍니다.
+clampedDir를 바로 써도 될 것 같은데 굳이 leverRange로 나누어서 사용하는 이유는
+ 이 clampedDir는 해상도를 기반으로 만들어진 값이라 캐릭터의 이동속도로 쓰기에는 너무 큰 값을 가지고 있기 때문입니다.
+이런 값으로 캐릭터를 움직이면 너무 빠른 속도로 캐릭터가 움직일게 분명하기 때문에
+입력 방향의 값을 0-1 사이 값으로 만들어서 정규화된 값으로 캐릭터에 전달하기 위한 것입니다.
+
+그리고 화면 해상도를 기준으로 값이 정해지기 때문에 해상도가 바뀌면 입력 방향 값의 크기가 바뀌어서
+캐릭터의 이동 속도가 바뀌는 문제도 있어서 0-1사이로 정규화된 값을 사용해야 합니다.
+캐릭터는 이렇게 전달받은 정규화된 이동 벡터에 이동속도를 곱해서 일정한 속도로 이동하게 됩니다.
+
+그 다음엔 OnBeginDrag에서 isInput을 true로 바꿔주고 OnEndDrag에서는 false로 바꿔줍니다.
+
+isInput이 활성화된 상태일 때 Update 함수에서 InputControlVector 함수를 지속적으로 호출하도록 하기 위해서 Update 함수 안에서 처리합니다.
+즉, 드래그 함수에 넣을 경우 조이스틱 드래그를 멈춘 상태일 때 이벤트가 들어오지 않기 때문에 Drag 함수에 넣지 않고 Update 함수 안에서 처리합니다.
 ```
