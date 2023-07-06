@@ -9,6 +9,8 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private RectTransform lever;    // 추가
     private RectTransform rectTransform;    // 추가
 
+    [SerializeField, Range(10f, 150f)] private float leverRange;
+
     private void Awake()    // 추가
     {
         rectTransform = GetComponent<RectTransform>();
@@ -17,10 +19,11 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public void OnBeginDrag(PointerEventData eventData)
     {
         // Debug.Log("Begin");
-
-        // 추가
         var inputDir = eventData.position - rectTransform.anchoredPosition;
-        lever.anchoredPosition = inputDir;
+        // 추가
+        var clampedDir = inputDir.magnitude < leverRange ? inputDir : inputDir.normalized * leverRange;
+
+        lever.anchoredPosition = clampedDir;    
     }
 
     // 오브젝트를 클릭해서 드래그 하는 도중에 들어오는 이벤트    // 하지만 클릭을 유지한 상태로 마우스를 멈추면 이벤트가 들어오지 않음    
@@ -28,9 +31,11 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
         // Debug.Log("Drag");
 
-        // 추가
         var inputDir = eventData.position - rectTransform.anchoredPosition;
-        lever.anchoredPosition = inputDir;
+        // 추가
+        var clampedDir = inputDir.magnitude < leverRange ? inputDir : inputDir.normalized * leverRange;
+
+        lever.anchoredPosition = clampedDir;    
     }
 
     public void OnEndDrag(PointerEventData eventData)
