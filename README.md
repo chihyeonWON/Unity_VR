@@ -779,3 +779,9 @@ Wall(1)의 PosX -: 48, PosY:0, PosZ: -48, RotationX : 0 RotationY : 180 Rotation
 
 그 후 Floor의 Overrides 창에서 Apply all을 눌러서 ShootingStage2와 ShootingStage3 Scene의 Floor Wall을 추가합니다.
 ```
+
+## Player의 움직임을 제어하는 조이스틱 구현
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/a817e34b-c526-4fea-ad51-6ea7e44ab5c7)
+```
+Joystick 이미지를 추가하고 그 아래에 Lever 이미지를 적절한 위치에 추가합니다.
+```
