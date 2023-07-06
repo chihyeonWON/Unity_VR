@@ -785,3 +785,26 @@ Wall(1)의 PosX -: 48, PosY:0, PosZ: -48, RotationX : 0 RotationY : 180 Rotation
 ```
 Joystick 이미지를 추가하고 그 아래에 Lever 이미지를 적절한 위치에 추가합니다.
 ```
+
+## 조이스틱 기능을 하는 VirtualJoystick C# Script 작성
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/5485d8f0-905b-4cfb-bf5b-5598298b4ea1)
+```
+터치한 위치를 따라서 레버 이미지가 따라 움직이도록 만듭니다.
+
+우선 빨간 레버 이미지의 Rect Transform 컴포넌트를 가질 lever 변수와 Joystick의 Rect Transform을 가지고 있을 rectTransform 변수를 선언합니다.
+그리고 lever 렉트 트랜스폼은 에디터의 인스펙터 뷰에서 넣어주기 위해서 SerializeField 어트리뷰트를 걸어주고
+본체의 rectTransform은 Awake 함수에서 GetComponent로 가지고 와서 저장해둡니다.
+
+그 다음은 터치한 위치를 찾아내서 lever 이미지가 그 위치로 이동하게 만들어 줘야합니다.
+
+터치한 위치는 이벤트 함수의 매개변수로 받는 eventData.position을 통해서 가져올 수 있습니다.
+이렇게 가져온 eventData.position에서 가상 조이스틱 게임 오브젝트의 위치인 rectTransform.anchoredPosition을 빼주면 lever가 있어야할 위치를 구할 수 있게 됩니다.
+구한 inputDir를 lever.anchoredPosition에 넣어줍니다. 이 과정은 OnBeginDrag와 OnDrag, 두 이벤트에서 동일하게 처리해줍니다.
+
+그리고 마지막으로 가상 조이스틱에서 손을 뗐을 때의 이벤트인 OnEndDrag에서는 lever.anchoredPosition을 Vector2.zero로 만들어서 조이스틱의 중심으로 다시 돌아가게 만들어준다.
+
+이 컴포넌트를 Joystick 오브젝트에 적용하고 lever 프로퍼티에 Joystick Lever를 넣어줍니다.
+
+실행하면 조이스틱 영역 밖으로 움직이면 빨간 레버 역시 조이스틱 위치를 벗어나 버립니다.
+레버가 조이스틱 영역을 벗어나지 않도록 수정할 필요가 있어보입니다.
+```
