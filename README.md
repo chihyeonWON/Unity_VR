@@ -808,3 +808,22 @@ Joystick 이미지를 추가하고 그 아래에 Lever 이미지를 적절한 �
 실행하면 조이스틱 영역 밖으로 움직이면 빨간 레버 역시 조이스틱 위치를 벗어나 버립니다.
 레버가 조이스틱 영역을 벗어나지 않도록 수정할 필요가 있어보입니다.
 ```
+
+## 조이스틱 레버가 조이스틱 영역을 벗어나지 않도록 VirtualJoystick C# Script 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/faa35600-c709-4be9-ad3c-a1c3560dc2f3)
+```
+조이스틱 레버가 조이스틱 영역을 벗어나지 않도록 VirtualJoystick C# Script 수정합니다.
+
+먼저 레버가 움직일 수 있는 거리를 조이스틱의 중심부로부터 일정 거리로 제한시키기 위해서 float 타입으로 leverRange라는 변수를 추가합니다.
+private으로 두되 에디터에서 수정할 수 있도록 SerializeField 어트리뷰트와 특정 범위 내에서만 값을 조절할 수 있도록 Range 어트리뷰트를 추가해줍니다.
+Range의 범위는 10에서 150 사이로 합니다.
+
+leverRange 변수를 만들고 나면 이벤트 함수에서 inputPos를 lever의 anchoredPosition에 바로 넣지 말고 inputPos의 길이와 leverRange를 비교한 뒤,
+leverRange보다 짧으면 inputPos를 바로 주고, 길면 inputPos를 정규화한 다음 leverRange를 곱하는 방식으로 inputPos의 거리를 제한하여 lever의 anchoredPosition에 넣어줍니다.
+이 과정도 OnDrag에서 똑같이 처리해줍니다.
+
+레버 이미지가 조이스틱 영역을 크게 벗어나지 않는 적절한 영역을 확인합니다. 지금은 100 정도가 적당해 보입니다.
+VirtualJoystick 컴포넌트가 부착되어 있는 Joystick 게임 오브젝트를 선택하고 인스펙터 뷰에서 Lever Range 프로퍼티를 34정로 설정합니다.
+
+게임을 플레이시키고 가상 조이스틱을 움직여보면 드래그를 조이스틱 밖으로 끌어도 조이스틱의 레버가 조이스틱 영역을 벗어나지 않는 것을 볼 수 있습습니다.
+```
