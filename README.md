@@ -1,6 +1,15 @@
 # Unity_Project
 Unity_Project on 2023 Summer Vacation.
 
+## Google App Store Release 구글 앱스토어 릴리즈
+[Zombie Shooting Game](https://play.google.com/console/u/0/developers/5278863456701079981/app/4973751470112176361/app-dashboard?timespan=thirtyDays)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/9d474644-ed7e-4f20-a48a-404c013a0062)
+```
+개발자 : wonchihyeon
+업데이트 : 1.0 버전 23.07.06
+향후 업데이트 계획 : 화면 자동 회전으로 변경, Player RPC 3인칭 시점으로 변경, 조이스틱 레버로 Player의 이동 조작 기능 추가 예정
+```
+
 ## Unity 설치하기
 
 [Unity Korea](https://unity.com/kr/download)
