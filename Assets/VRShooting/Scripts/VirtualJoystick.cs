@@ -11,31 +11,34 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     [SerializeField, Range(10f, 150f)] private float leverRange;
 
+    private Vector2 inputVector;    // 추가
+    private bool isInput;    // 추가
+
+
     private void Awake()    // 추가
     {
         rectTransform = GetComponent<RectTransform>();
     }
 
+    public void ControlJoystickLever(PointerEventData eventData)
+    {
+        var inputDir = eventData.position - rectTransform.anchoredPosition;
+        var clampedDir = inputDir.magnitude < leverRange ? inputDir
+            : inputDir.normalized * leverRange;
+        lever.anchoredPosition = clampedDir;
+        inputVector = clampedDir / leverRange;
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
-        // Debug.Log("Begin");
-        var inputDir = eventData.position - rectTransform.anchoredPosition;
-        // 추가
-        var clampedDir = inputDir.magnitude < leverRange ? inputDir : inputDir.normalized * leverRange;
-
-        lever.anchoredPosition = clampedDir;    
+        ControlJoystickLever(eventData); 
+        isInput = true;    
     }
 
     // 오브젝트를 클릭해서 드래그 하는 도중에 들어오는 이벤트    // 하지만 클릭을 유지한 상태로 마우스를 멈추면 이벤트가 들어오지 않음    
     public void OnDrag(PointerEventData eventData)
     {
-        // Debug.Log("Drag");
-
-        var inputDir = eventData.position - rectTransform.anchoredPosition;
-        // 추가
-        var clampedDir = inputDir.magnitude < leverRange ? inputDir : inputDir.normalized * leverRange;
-
-        lever.anchoredPosition = clampedDir;    
+        ControlJoystickLever(eventData);    
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -44,5 +47,20 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         // 추가
         lever.anchoredPosition = Vector2.zero;
+
+        isInput = false;
+    }
+
+    private void InputControlVector()
+    {
+       
+    }
+
+    void Update()
+    {
+        if (isInput)
+        {
+            InputControlVector();
+        }
     }
 }
