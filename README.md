@@ -896,3 +896,6 @@ TPS Character Controller 스크립트의 LookAround 함수가 inputVector를 받
 그리고 onEndDrag 함수와 InputControlVector 함수의 controller.move 함수를 호출하는 부분을 switch 문으로 바꾸어서
 JoystickType의 값(move or rotate)에 따라서 Move or Rotate 함수가 호출되도록 변경합니다.
 ```
+
+## 3인칭 RPC 시점으로 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/421a03c9-f5bf-4f10-921a-77408e07a381)
