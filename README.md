@@ -870,4 +870,13 @@ isInput이 활성화된 상태일 때 Update 함수에서 InputControlVector 함
 3인칭 시점의 TPS 패키지를 import하고 character를 가져온다음 VirtualJoyStick 스크립트에
 TPS 컨트롤러를 설정할 수 있도록 controller 변수를 선언한 다음 onEndDrag 함수와 InputControlVector 함수에
 controller.Move(Vector2.zero), controller.Move(inputVector)를 각각 넣어줍니다.
+
+그 후 Joystick 프리팹에 적용된 Controller 프로퍼티에 TPS Character Controller 컴포넌트가 적용되어 있는 Character를
+넣어줍니다. 그 후 실행하면 Joystick에 따라서 캐릭터가 움직이는 것을 확인할 수 있습니다.
+```
+## TPS Character Controller C# Script 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/70b99ace-1077-40c3-a187-4e5cbf6006b2)
+```
+TPS Character Controller 스크립트의 Move 함수에서 캐릭터 이동의 입력을 키보드의 입력에서 받아오는 것이 아닌
+VirtualJoyStick의 InputControlVector에서 주어지는 InputVector의 x, y 값을 받아와서 움직이도록 수정합니다.
 ```
