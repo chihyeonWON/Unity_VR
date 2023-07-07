@@ -16,6 +16,10 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     [SerializeField] private TPSCharacterController controller;
 
+    public enum JoystickType {  Move, Rotate }
+    public JoystickType joystickType;
+
+
     private void Awake()    // 추가
     {
         rectTransform = GetComponent<RectTransform>();
@@ -46,12 +50,29 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
         lever.anchoredPosition = Vector2.zero;
         isInput = false;
-        controller.Move(Vector2.zero);
+        switch (joystickType)
+        {
+            case JoystickType.Move:
+                controller.Move(Vector2.zero);
+                break;
+
+            case JoystickType.Rotate:
+                break;
+        }
     }
 
     private void InputControlVector()
     {
-        controller.Move(inputVector);
+        switch (joystickType)
+        {
+            case JoystickType.Move:
+                controller.Move(inputVector);
+                break;
+
+            case JoystickType.Rotate:
+                controller.LookAround(inputVector);
+                break;
+        }
     }
 
     void Start()
