@@ -864,7 +864,7 @@ isInput이 활성화된 상태일 때 Update 함수에서 InputControlVector 함
 즉, 드래그 함수에 넣을 경우 조이스틱 드래그를 멈춘 상태일 때 이벤트가 들어오지 않기 때문에 Drag 함수에 넣지 않고 Update 함수 안에서 처리합니다.
 ```
 ## VirtualJoyStick C# Script 수정
-![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/72467b2c-9748-4b67-bad1-3c4c6c406b4c)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/72467b2c-9748-4b67-bad1-3c4c6c406b4c)     
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/29684f88-c232-44ee-801b-1ff043b6f2de)
 ```
 3인칭 시점의 TPS 패키지를 import하고 character를 가져온다음 VirtualJoyStick 스크립트에
@@ -887,3 +887,12 @@ VirtualJoyStick의 InputControlVector에서 주어지는 InputVector의 x, y 값
 TPS Character Controller 스크립트의 LookAround 함수가 inputVector를 받아오도록 수정합니다.
 ```
 
+## VirtualJoystick C# Script의 수정 (조이스틱 타입에 따라 다른 함수가 호출되도록)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/8055524e-4e76-4b5f-80a6-61a621790086)    
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/e9885c34-f4fd-4285-b132-8a670d5afc2d)
+```
+열거형 타입 JoyStickType { Move, Rotate } 을 생성하고 JoyStickType 변수 joystickType을 생성합니다.
+
+그리고 onEndDrag 함수와 InputControlVector 함수의 controller.move 함수를 호출하는 부분을 switch 문으로 바꾸어서
+JoystickType의 값(move or rotate)에 따라서 Move or Rotate 함수가 호출되도록 변경합니다.
+```
