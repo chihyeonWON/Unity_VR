@@ -19,11 +19,10 @@ public class TPSCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LookAround();
-        Move();
+
     }
 
-    private void Move()
+    public void Move(Vector2 inputVector)
     {
         // 이동 방향 구하기 1
         //Debug.DrawRay(cameraArm.position, cameraArm.forward, Color.red);
@@ -32,7 +31,7 @@ public class TPSCharacterController : MonoBehaviour
         //Debug.DrawRay(cameraArm.position, new Vector3(cameraArm.forward.x, 0f, cameraArm.forward.z).normalized, Color.red);
 
         // 이동 방향키 입력 값 가져오기
-        Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 moveInput = inputVector;
         // 이동 방향키 입력 판정 : 이동 방향 벡터가 0보다 크면 입력이 발생하고 있는 중
         bool isMove = moveInput.magnitude != 0;
         // 입력이 발생하는 중이라면 이동 애니메이션 재생
@@ -55,10 +54,10 @@ public class TPSCharacterController : MonoBehaviour
         }
     }
 
-    private void LookAround()
+    public void LookAround(Vector3 inputDirection)
     {
         // 마우스 이동 값 검출
-        Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        Vector2 mouseDelta = inputDirection;
         // 카메라의 원래 각도를 오일러 각으로 저장
         Vector3 camAngle = cameraArm.rotation.eulerAngles;
         // 카메라의 피치 값 계산
