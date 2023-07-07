@@ -863,3 +863,20 @@ clampedDir를 바로 써도 될 것 같은데 굳이 leverRange로 나누어서 
 isInput이 활성화된 상태일 때 Update 함수에서 InputControlVector 함수를 지속적으로 호출하도록 하기 위해서 Update 함수 안에서 처리합니다.
 즉, 드래그 함수에 넣을 경우 조이스틱 드래그를 멈춘 상태일 때 이벤트가 들어오지 않기 때문에 Drag 함수에 넣지 않고 Update 함수 안에서 처리합니다.
 ```
+## VirtualJoyStick C# Script 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/72467b2c-9748-4b67-bad1-3c4c6c406b4c)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/29684f88-c232-44ee-801b-1ff043b6f2de)
+```
+3인칭 시점의 TPS 패키지를 import하고 character를 가져온다음 VirtualJoyStick 스크립트에
+TPS 컨트롤러를 설정할 수 있도록 controller 변수를 선언한 다음 onEndDrag 함수와 InputControlVector 함수에
+controller.Move(Vector2.zero), controller.Move(inputVector)를 각각 넣어줍니다.
+
+그 후 Joystick 프리팹에 적용된 Controller 프로퍼티에 TPS Character Controller 컴포넌트가 적용되어 있는 Character를
+넣어줍니다. 그 후 실행하면 Joystick에 따라서 캐릭터가 움직이는 것을 확인할 수 있습니다.
+```
+## TPS Character Controller C# Script 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/70b99ace-1077-40c3-a187-4e5cbf6006b2)
+```
+TPS Character Controller 스크립트의 Move 함수에서 캐릭터 이동의 입력을 키보드의 입력에서 받아오는 것이 아닌
+VirtualJoyStick의 InputControlVector에서 주어지는 InputVector의 x, y 값을 받아와서 움직이도록 수정합니다.
+```
