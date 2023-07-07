@@ -1,4 +1,4 @@
-![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/36d7c12d-ac86-48af-9b38-db2ea0df1d14)# Unity_Project
+# Unity_Project
 Unity_Project on 2023 Summer Vacation.
 
 ## Google App Store Release 구글 앱스토어 릴리즈
