@@ -1,4 +1,4 @@
-# Unity_Project
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/36d7c12d-ac86-48af-9b38-db2ea0df1d14)# Unity_Project
 Unity_Project on 2023 Summer Vacation.
 
 ## Google App Store Release 구글 앱스토어 릴리즈
@@ -874,9 +874,16 @@ controller.Move(Vector2.zero), controller.Move(inputVector)를 각각 넣어줍�
 그 후 Joystick 프리팹에 적용된 Controller 프로퍼티에 TPS Character Controller 컴포넌트가 적용되어 있는 Character를
 넣어줍니다. 그 후 실행하면 Joystick에 따라서 캐릭터가 움직이는 것을 확인할 수 있습니다.
 ```
-## TPS Character Controller C# Script 수정
+## TPS Character Controller C# Script Move 메서드 수정
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/70b99ace-1077-40c3-a187-4e5cbf6006b2)
 ```
 TPS Character Controller 스크립트의 Move 함수에서 캐릭터 이동의 입력을 키보드의 입력에서 받아오는 것이 아닌
 VirtualJoyStick의 InputControlVector에서 주어지는 InputVector의 x, y 값을 받아와서 움직이도록 수정합니다.
 ```
+
+## TPS Character Controller C# Script LookAround 메서드 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/655400e3-af0c-409c-b060-1f972b91c4db)
+```
+TPS Character Controller 스크립트의 LookAround 함수가 inputVector를 받아오도록 수정합니다.
+```
+
