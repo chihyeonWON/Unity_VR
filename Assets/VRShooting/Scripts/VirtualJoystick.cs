@@ -14,6 +14,7 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private Vector2 inputVector;    // 추가
     private bool isInput;    // 추가
 
+    [SerializeField] private TPSCharacterController controller;
 
     private void Awake()    // 추가
     {
@@ -43,17 +44,19 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        // Debug.Log("End");
-
-        // 추가
         lever.anchoredPosition = Vector2.zero;
-
         isInput = false;
+        controller.Move(Vector2.zero);
     }
 
     private void InputControlVector()
     {
-       
+        controller.Move(inputVector);
+    }
+
+    void Start()
+    {
+
     }
 
     void Update()
