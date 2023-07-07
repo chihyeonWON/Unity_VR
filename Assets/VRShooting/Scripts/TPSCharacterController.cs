@@ -54,10 +54,10 @@ public class TPSCharacterController : MonoBehaviour
         }
     }
 
-    public void LookAround(Vector3 inputDirection)
+    public void LookAround(Vector3 inputVector)
     {
         // 마우스 이동 값 검출
-        Vector2 mouseDelta = inputDirection;
+        Vector2 mouseDelta = inputVector;
         // 카메라의 원래 각도를 오일러 각으로 저장
         Vector3 camAngle = cameraArm.rotation.eulerAngles;
         // 카메라의 피치 값 계산
