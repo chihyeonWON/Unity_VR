@@ -863,3 +863,11 @@ clampedDir를 바로 써도 될 것 같은데 굳이 leverRange로 나누어서 
 isInput이 활성화된 상태일 때 Update 함수에서 InputControlVector 함수를 지속적으로 호출하도록 하기 위해서 Update 함수 안에서 처리합니다.
 즉, 드래그 함수에 넣을 경우 조이스틱 드래그를 멈춘 상태일 때 이벤트가 들어오지 않기 때문에 Drag 함수에 넣지 않고 Update 함수 안에서 처리합니다.
 ```
+## VirtualJoyStick C# Script 수정
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/72467b2c-9748-4b67-bad1-3c4c6c406b4c)
+![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/29684f88-c232-44ee-801b-1ff043b6f2de)
+```
+3인칭 시점의 TPS 패키지를 import하고 character를 가져온다음 VirtualJoyStick 스크립트에
+TPS 컨트롤러를 설정할 수 있도록 controller 변수를 선언한 다음 onEndDrag 함수와 InputControlVector 함수에
+controller.Move(Vector2.zero), controller.Move(inputVector)를 각각 넣어줍니다.
+```
