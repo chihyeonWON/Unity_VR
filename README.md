@@ -1,7 +1,7 @@
 # Unity_Project
 Unity_Project on 2023 Summer Vacation.
 
-## Google App Store Release 구글 앱스토어 릴리즈
+## 구글 플레이스토어에서 Shooting Game을 다운로드하세요 !
 [Zombie Shooting Game](https://play.google.com/console/u/0/developers/5278863456701079981/app/4973751470112176361/app-dashboard?timespan=thirtyDays)
 ![image](https://github.com/chihyeonWON/Unity_VR/assets/58906858/9d474644-ed7e-4f20-a48a-404c013a0062)
 ```
